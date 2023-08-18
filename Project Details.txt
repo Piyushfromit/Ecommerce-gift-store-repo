@@ -1,0 +1,7 @@
+first day     18-08-2023
+
+Project details :
+
+java vetsion :  17 
+
+Spring boot version : 3.1.2
