@@ -1,5 +1,6 @@
 package com.msc.securityconfiguration;
 
+
 import javax.sql.DataSource;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +16,7 @@ import org.springframework.security.web.SecurityFilterChain;
 @Configuration
 @EnableWebSecurity
 public class SecurityConfiguration {
-
+	
 	
 	@Autowired
 	private DataSource dataSource;
@@ -32,12 +33,12 @@ public class SecurityConfiguration {
 
 	}
 	
+	
 	@Bean
 	public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception{
 		
 		http.csrf().disable().authorizeHttpRequests((req) ->req
-				
-				.requestMatchers("/", "/register").permitAll()
+				.requestMatchers( "/register").permitAll()
 				.requestMatchers("/admin").hasRole("ADMIN")
 				.requestMatchers("/user").hasAnyRole("ADMIN", "USER")
 				.anyRequest().authenticated()
@@ -47,10 +48,10 @@ public class SecurityConfiguration {
 		return http.build();
 	}
 	
+	
 	@Bean
 	public PasswordEncoder passwordEncoder(){
 		return new BCryptPasswordEncoder();
 	}
-	
 	
 }
