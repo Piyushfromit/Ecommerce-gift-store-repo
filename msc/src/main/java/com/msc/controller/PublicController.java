@@ -17,6 +17,16 @@ public class PublicController {
 		 
 	}
 	
+	@GetMapping("/hi")
+	public String jsppagereturn() {
+		
+		System.out.println("Home Page !"); 
+		
+	 return "home";
+		 
+	}
+	
+	
 	
 	
 
