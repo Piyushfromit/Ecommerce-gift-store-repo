@@ -8,6 +8,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>home jsp</h1>
+
+   <h1 >Radhe Radhe This is INDEX Page </h1>
+
+
 </body>
 </html>

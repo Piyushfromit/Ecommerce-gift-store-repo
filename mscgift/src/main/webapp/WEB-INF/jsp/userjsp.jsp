@@ -8,9 +8,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-
-   <h1 >Radhe Radhe</h1>
-
-
+<h1>This Is user JSP Page</h1>
 </body>
 </html>
