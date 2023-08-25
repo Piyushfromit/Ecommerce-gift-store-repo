@@ -7,12 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-
-
-
-<h1>Hello Piyush Welcome to Jsp page</h1>
-
-
-
+   <h1>This is user jsp page </h1>
 </body>
 </html>

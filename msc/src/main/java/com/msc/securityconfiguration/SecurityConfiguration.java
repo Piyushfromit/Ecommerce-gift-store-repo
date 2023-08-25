@@ -35,18 +35,39 @@ public class SecurityConfiguration {
 	
 	
 	@Bean
-	public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception{
-		
-		http.csrf().disable().authorizeHttpRequests((req) ->req
-				.requestMatchers( "/register", "/", "/hi").permitAll()
-				.requestMatchers("/admin").hasRole("ADMIN")
-				.requestMatchers("/user").hasAnyRole("ADMIN", "USER")
-				.anyRequest().authenticated()
-				
-				).formLogin();
-		
-		return http.build();
-	}
+    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+        http
+            .authorizeHttpRequests(authorizeRequests ->
+                authorizeRequests
+                    .requestMatchers("/","/hi", "/register").permitAll()
+                    .requestMatchers("/admin/**").hasRole("ADMIN") // Requires role "ADMIN" for /admin/**
+                    .requestMatchers("/user/**").hasRole("USER") // Requires role "USER" for /user/**
+                    .anyRequest().permitAll()
+            )
+            .formLogin(formLogin -> formLogin .permitAll() )
+            .logout(logout ->  logout  .permitAll())
+            .csrf(csrf ->  csrf.disable())
+            
+            ;
+            
+        return http.build();
+    }
+	
+	
+	
+//	@Bean
+//	public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception{
+//		
+//		http.csrf().disable().authorizeHttpRequests((req) ->req
+//				.requestMatchers( "/register", "/", "/hi").permitAll()
+//				.requestMatchers("/admin").hasRole("ADMIN")
+//				.requestMatchers("/user").hasAnyRole("ADMIN", "USER")
+//				.anyRequest().authenticated()
+//				
+//				).formLogin();
+//		
+//		return http.build();
+//	}
 	
 	
 	@Bean

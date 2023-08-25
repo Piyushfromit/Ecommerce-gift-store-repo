@@ -29,7 +29,7 @@ public class LoginSignupController {
 	@PostMapping("/register")
 	@ResponseBody
 	public String registerUser(@RequestBody Users user ) {
-		
+		System.out.println("register controller");
 		if(usersRepository.findByEmail(user.getEmail()).isPresent()) {
 			return "MailId already Exist";
 		}

@@ -7,8 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-
-
- <h1>JSP PAGE</h1>
+<h1> This is Admin Jsp Page</h1>
 </body>
 </html>
