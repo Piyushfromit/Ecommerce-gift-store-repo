@@ -18,13 +18,14 @@ import com.mscgift.entity.Users;
 public class UsersUserDetails implements UserDetails{
 
 	
-	private String name;
+	// private String name;
+	private String email;
 	private String password;
 	private List<GrantedAuthority> authorities;
 	
 	
 	public UsersUserDetails(Users users) {
-		name= users.getName();
+		email= users.getEmail();
 		password = users.getPassword();
 		authorities= Arrays.stream(users.getRoles().split(",")).map(SimpleGrantedAuthority::new)
 	    		 .collect(Collectors.toList());
@@ -47,7 +48,8 @@ public class UsersUserDetails implements UserDetails{
 	@Override
 	public String getUsername() {
 		// TODO Auto-generated method stub
-		return name;
+		//return name;
+		return email;
 	}
 
 	@Override
