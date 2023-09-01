@@ -14,11 +14,10 @@ import com.mscgift.service.UsersService;
 @Controller
 public class UserController {
 	
-	@Autowired
-	private UsersService usersService;
+
 	
 	@GetMapping("/")
-	@ResponseBody
+	@ResponseBody 
 	public String welcomeMessage() {
 		return "jai sree ram ";
 	}
@@ -41,13 +40,7 @@ public class UserController {
 		return "adminjsp";
 	}
 	
-	@PostMapping("/register")
-	@ResponseBody
-	public String registerUser(@RequestBody Users users) {
-		System.out.println("register controller");
-		final Users regUser = this.usersService.registerUser(users);
-		return "user saved";
-	}
+	
 	
 	
 

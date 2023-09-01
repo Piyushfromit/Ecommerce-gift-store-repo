@@ -12,10 +12,10 @@ public class Users {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
 	private String name;
+	private String phone;
 	private String email;
 	private String password;
 	private Integer isEnabled;
-	private String phone;
 	private String roles;
 	
 	public Users() {
