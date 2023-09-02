@@ -21,7 +21,6 @@ public class LoginRegisterController {
 	
 	@Autowired
 	private MailService mailService;
-	
 	@Autowired
 	private UsersService usersService;
 	@Autowired
