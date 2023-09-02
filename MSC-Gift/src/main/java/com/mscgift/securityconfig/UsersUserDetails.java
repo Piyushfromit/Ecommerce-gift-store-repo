@@ -17,18 +17,19 @@ import com.mscgift.entity.Users;
 
 public class UsersUserDetails implements UserDetails{
 
-	
-	// private String name;
 	private String email;
 	private String password;
+	private Boolean enabled;
 	private List<GrantedAuthority> authorities;
 	
 	
 	public UsersUserDetails(Users users) {
 		email= users.getEmail();
 		password = users.getPassword();
-		authorities= Arrays.stream(users.getRoles().split(",")).map(SimpleGrantedAuthority::new)
-	    		 .collect(Collectors.toList());
+		enabled = users.getIsEnabled();
+		authorities= Arrays.stream(users.getRoles().split(","))
+				.map(SimpleGrantedAuthority::new)
+	    		.collect(Collectors.toList());
 		
 	}
 	
@@ -48,7 +49,6 @@ public class UsersUserDetails implements UserDetails{
 	@Override
 	public String getUsername() {
 		// TODO Auto-generated method stub
-		//return name;
 		return email;
 	}
 
@@ -73,7 +73,7 @@ public class UsersUserDetails implements UserDetails{
 	@Override
 	public boolean isEnabled() {
 		// TODO Auto-generated method stub
-		return true;
+		 return enabled;
 	}
 
 	

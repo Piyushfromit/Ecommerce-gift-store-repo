@@ -15,7 +15,7 @@ public class Users {
 	private String phone;
 	private String email;
 	private String password;
-	private Integer isEnabled;
+	private Boolean isEnabled;
 	private String roles;
 	
 	public Users() {
@@ -23,7 +23,7 @@ public class Users {
 	}
 
 
-	public Users(String name, String email, String password, Integer isEnabled, String phone, String roles) {
+	public Users(String name, String email, String password, Boolean isEnabled, String phone, String roles) {
 		super();
 		this.name = name;
 		this.email = email;
@@ -34,7 +34,7 @@ public class Users {
 	}
 
 
-	public Users(Integer id, String name, String email, String password, Integer isEnabled, String phone,
+	public Users(Integer id, String name, String email, String password, Boolean isEnabled, String phone,
 			String roles) {
 		super();
 		this.id = id;
@@ -114,7 +114,7 @@ public class Users {
 	/**
 	 * @return the isEnabled
 	 */
-	public Integer getIsEnabled() {
+	public Boolean getIsEnabled() {
 		return isEnabled;
 	}
 
@@ -122,7 +122,7 @@ public class Users {
 	/**
 	 * @param isEnabled the isEnabled to set
 	 */
-	public void setIsEnabled(Integer isEnabled) {
+	public void setIsEnabled(Boolean isEnabled) {
 		this.isEnabled = isEnabled;
 	}
 

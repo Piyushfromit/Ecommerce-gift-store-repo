@@ -22,8 +22,13 @@ public class UsersServiceImp implements UsersService{
 		String password = users.getPassword();
 	    users.setPassword(passwordEncoder.encode(password));
 		
+	    users.setIsEnabled(true);
+	    users.setRoles("ROLE_USER");
 		Users savedUser = usersRepository.save(users);
 		return savedUser;
+		
 	}
+
+	
 
 }
