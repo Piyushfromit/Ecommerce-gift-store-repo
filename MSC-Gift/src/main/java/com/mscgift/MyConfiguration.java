@@ -12,7 +12,7 @@ import org.springframework.mail.javamail.JavaMailSenderImpl;
 public class MyConfiguration {
 	
     @Bean
-    public JavaMailSender getJavaMailSenderForOTP() {
+    public JavaMailSender javaMailSenderForOTP() {
         JavaMailSenderImpl mailSender = new JavaMailSenderImpl();
         mailSender.setHost("smtp.gmail.com");
         mailSender.setPort(587);

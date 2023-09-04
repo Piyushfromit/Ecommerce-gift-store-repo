@@ -34,7 +34,7 @@ public class MailServiceImpl implements MailService {
         
         
         
-        MailSender mailsender = myConfiguration.getJavaMailSenderForOTP();
+        MailSender mailsender = myConfiguration.javaMailSenderForOTP();
         mailsender.send(mailData);
     }
 	
