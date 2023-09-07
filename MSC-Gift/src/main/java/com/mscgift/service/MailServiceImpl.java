@@ -22,7 +22,7 @@ public class MailServiceImpl implements MailService {
 	
 	
 	@Override
-	public void sendOTPToUserMailId(String toMailId, int otp) {
+	public void sendOTPToUserMailId(String toMailId, String otp) {
         SimpleMailMessage mailData = new SimpleMailMessage();
         mailData.setTo(toMailId);
         mailData.setSubject("Mial for OTP");

@@ -16,11 +16,11 @@ public class UserController {
 	
 
 	
-	@GetMapping("/")
-	@ResponseBody 
-	public String welcomeMessage() {
-		return "jai sree ram ";
-	}
+//	@GetMapping("/")
+//	@ResponseBody 
+//	public String welcomeMessage() {
+//		return "jai sree ram ";
+//	}
 	
 	@GetMapping("/jsp")
 	public String welcomeJspPage() {
