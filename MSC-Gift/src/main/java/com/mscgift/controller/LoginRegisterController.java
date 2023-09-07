@@ -48,7 +48,7 @@ public class LoginRegisterController {
 		// Send OTP To User Mail-Id
 		String userMailId = users.getEmail();
         String otp = generateRandom6DigitOTP();
-        System.out.println("User Sent OTP: " + otp);
+        System.out.println("Generated OTP: " + otp);
         System.out.println("User Mail ID: " + userMailId);
         mailService.sendOTPToUserMailId(userMailId, otp);
         session.setAttribute("userToRegister", users);
@@ -68,18 +68,18 @@ public class LoginRegisterController {
     }
 	
 	@PostMapping("/verifyotp")
-    public String PostVerifyOTP(@ModelAttribute(name = "otp") String otp, final Model model, final HttpSession session) {
+    public String PostVerifyOTP(@ModelAttribute(name = "otp") String otpfiledbyuser, final Model model, final HttpSession session) {
 		Users user = (Users) session.getAttribute("userToRegister");
 		String otpSentByCode = (String)session.getAttribute("otpSentByCode");
 		
-		if(otp.equals(otpSentByCode)) {
+		if(otpfiledbyuser.equals(otpSentByCode)) {
 			final Users regUser = this.usersService.registerUser(user);
 			System.out.println("User successfully Registered");
 		}
 		
-         System.out.println("User Entered OTP: " + otp);
+         System.out.println("User Entered OTP: " + otpfiledbyuser);
          
-         System.out.println("Developer OTP: " + otpSentByCode);
+         System.out.println("Developer Sent OTP: " + otpSentByCode);
          
          return "index";   // redirect:/home
     }
