@@ -14,13 +14,6 @@ import com.mscgift.service.UsersService;
 @Controller
 public class UserController {
 	
-
-	
-//	@GetMapping("/")
-//	@ResponseBody 
-//	public String welcomeMessage() {
-//		return "jai sree ram ";
-//	}
 	
 	@GetMapping("/jsp")
 	public String welcomeJspPage() {
