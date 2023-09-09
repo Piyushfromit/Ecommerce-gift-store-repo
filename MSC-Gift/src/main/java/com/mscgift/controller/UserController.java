@@ -15,23 +15,6 @@ import com.mscgift.service.UsersService;
 public class UserController {
 	
 	
-	@GetMapping("/jsp")
-	public String welcomeJspPage() {
-		
-		return "home";
-	}
-	
-	@GetMapping("/user/jsp")
-	public String userJspPage() {
-		
-		return "userjsp";
-	}
-	
-	@GetMapping("/admin/jsp")
-	public String adminJspPage() {
-		
-		return "adminjsp";
-	}
 	
 	
 	

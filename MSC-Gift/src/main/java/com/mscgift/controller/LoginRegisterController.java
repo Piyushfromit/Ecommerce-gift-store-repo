@@ -29,6 +29,12 @@ public class LoginRegisterController {
 	private UsersRepository userRepository;
 	
 	
+	@GetMapping("/login")
+	public String getLoginUser() {
+		
+		return "login";
+		
+	}
 	
 	@GetMapping("/register")
 	public String getRegisterUser() {
@@ -36,7 +42,6 @@ public class LoginRegisterController {
 		return "register";
 		
 	}
-	
 	
 	@PostMapping("/register")
 	public String PostRegisterUser(@ModelAttribute final Users users, final HttpSession session, final Model model) {   // @ModelAttribute   @RequestBody   @ResponseBody   
@@ -81,9 +86,13 @@ public class LoginRegisterController {
          
          System.out.println("Developer Sent OTP: " + otpSentByCode);
          
-         return "index";   // redirect:/home
+         return "login";   // redirect:/home
     }
 
 
+	
+	
+	
+	
 	
 }
