@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 
-<link rel="stylesheet" type="text/css" href="/resources/css/user.css?jknj">
+<link rel="stylesheet" type="text/css" href="/resources/css/user.css">
 
 
 </head>

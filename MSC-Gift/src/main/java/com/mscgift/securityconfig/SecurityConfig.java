@@ -47,7 +47,7 @@ public class SecurityConfig {
         		.successHandler((request, response, authentication) ->{
         	    if (authentication.getAuthorities().stream()
                   .anyMatch(grantedAuthority -> grantedAuthority.getAuthority().equals("ROLE_ADMIN"))) {
-                   response.sendRedirect("/admin/jsp"); // Redirect to admin dashboard for ROLE_ADMIN
+                   response.sendRedirect("/admin/home"); // Redirect to admin dashboard for ROLE_ADMIN
                   } else {
                    response.sendRedirect("/"); // Redirect to user dashboard for ROLE_USER
                   }	
@@ -58,26 +58,6 @@ public class SecurityConfig {
         return http.build();
 	}
 
-      
-//        .formLogin(formLogin -> 
-//		 formLogin.loginPage("/login").permitAll())
-//		 .formLogin(formLogin ->
-//		 formLogin.defaultSuccessUrl("/welcome") );
-        
-        
-//		return http
-//				.csrf().disable()
-//				.authorizeHttpRequests()
-//				.requestMatchers("/","/hi","/register").permitAll()
-//				.and()
-//				.authorizeHttpRequests()
-//				.requestMatchers("/admin**").authenticated()
-//				.and().formLogin()
-//				.and().build();
-		
-    	
-	
-	
 	
 	@Bean PasswordEncoder passwordEncoder() {
 		return new BCryptPasswordEncoder();

@@ -5,12 +5,22 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+
+<link rel="stylesheet" type="text/css" href="../resources/css/crm.css">
 </head>
 <body>
+<jsp:include page="../admin/include/adminheader.jsp" />
 
-<h1>CRM</h1>
+<jsp:include page="../admin/include/functionheader.jsp" />
 
- <h1>Welcome to Admin Home Page</h1>
+<div>
+
+
+
+
+
+
+</div>
  
 
 
