@@ -1,32 +1,17 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     
-    <header class="site-header">
+    <header class="function-header">
         
        
-       
-       
-       
-        <div class="user-actions">
-          <h2 style="color: white">Admin CRM </h2>
-            <!-- <img src="your-logo.png" alt="Your Logo"> -->
-        </div>
         
-       
-       
-       
-        <div class="nav">
-            <ul>
-               
-            </ul>
-        </div>
-        
-       
-       
-       
-        <div class="user-actions">
-            <a href="/">Go To User Side</a>
-            <a href="/logout">Logout</a>
+        <div class="admin-actions">
+            <a href="#">All Users</a>
+            <a href="#">All Admin</a>
+            <a href="#">Product Category</a>
+            <a href="#">Add Category</a>
+            <a href="#">All Products</a>
+            <a href="#">Add Products</a>
         </div>
         
         
