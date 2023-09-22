@@ -6,7 +6,7 @@
        
         
         <div class="admin-actions">
-            <a href="#">All Users</a>
+            <a href="/admin/allusers">All Users</a>
             <a href="#">All Admin</a>
             <a href="#">Product Category</a>
             <a href="#">Add Category</a>

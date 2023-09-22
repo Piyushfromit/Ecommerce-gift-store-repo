@@ -14,7 +14,7 @@ body {
 /* Home page Header ############################################## */
 
 .site-header {
-    background-color: #f22222;
+    background-color: #18978F ;
     position: sticky;
     top: 0;
     display: flex;
@@ -23,6 +23,19 @@ body {
     padding: 10px 20px;
     min-height:40px; 
 }
+
+/* 
+#f22222
+
+#18978F Good one
+
+#FDC703
+
+#029E9D 
+#f15222
+https://colorhunt.co/
+
+*/
 
 .logo img {
     max-height: 35px;
@@ -58,7 +71,7 @@ body {
 
 .user-actions a:hover {
     background-color: white;
-    color: #f15222;
+    color: #18978F;
 }
   
 /* Registration And Login Form ############################################### */
@@ -75,7 +88,7 @@ body {
 
 .regform h2 {
     text-align: center;
-    color: #f22222;
+    color: #18978F ;
     margin: 15px;
 }
 .regform p{
@@ -101,7 +114,7 @@ body {
 	text-decoration: none;
     width: 100%;
     padding: 10px;
-    background-color: #f22222; /* Updated color theme */
+    background-color: #18978F; /* Updated color theme */
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -114,8 +127,8 @@ body {
 
 .regform input[type="submit"]:hover {
     background-color: #ffffff; /* White for hover */
-    color: #f22222; /* Text color on hover */
-    border: 1px solid #f22222;
+    color: #18978F; /* Text color on hover */
+    border: 1px solid #18978F;
 }
 /* Media query for screens up to 480px (small smartphones) */
 @media screen and (max-width: 480px) {
