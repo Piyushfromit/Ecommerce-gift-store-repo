@@ -16,7 +16,7 @@
 <link rel="stylesheet" type="text/css" href="../resources/css/crm.css">
 </head>
 <body>
-<jsp:include page="../admin/include/adminheader.jsp" />
+
 
 <jsp:include page="../admin/include/functionheader.jsp" />
 

@@ -1,5 +1,6 @@
 package com.mscgift.entity;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -11,7 +12,9 @@ public class Users {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
+	@Column(length = 100, name ="name")
 	private String name;
+	@Column(length = 12, name ="phone")
 	private String phone;
 	private String email;
 	private String password;
@@ -156,6 +159,13 @@ public class Users {
 	 */
 	public void setRoles(String roles) {
 		this.roles = roles;
+	}
+
+
+	@Override
+	public String toString() {
+		return "Users [id=" + id + ", name=" + name + ", phone=" + phone + ", email=" + email + ", password=" + password
+				+ ", isEnabled=" + isEnabled + ", roles=" + roles + "]";
 	}
 
 

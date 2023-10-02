@@ -4,6 +4,7 @@ import java.math.BigDecimal;
 import java.sql.Date;
 import java.util.List;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -16,9 +17,9 @@ public class Product {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id; // Product ID
-	private String name; // Product Name
+	private String productName; // Product Name
+	@Column(length = 3000, name ="description")
 	private String description; // Product Description
-	private String category; // Category
 	private BigDecimal price; // Price
 	private BigDecimal discountedPrice; // Discounted Price
 	private int stockQuantity; // Stock Quantity
@@ -34,7 +35,8 @@ public class Product {
 	private double parcelWeight; // Product Weight
 	private double parcelLength;
 	private double parcelWidth;
-	private double parcelHeight;
+	private double parcelHeight;     
+	private Integer categoryId;
 	
 	// private Vendor vendor; // Vendor/Supplier Information
 	// private SalesHistory salesHistory; // Sales History
@@ -50,6 +52,13 @@ public class Product {
 	// private List<CustomAttribute> customAttributes; // Custom Attributes
 	// private String availabilityStatus; // Availability Status
 	// private String productStatus; // Product Status
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	

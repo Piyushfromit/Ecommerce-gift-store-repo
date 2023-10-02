@@ -18,5 +18,5 @@ class Review {
 	private int rating;
 	private Boolean isEnabled;
 
-	// Getters and setters
+	
 }

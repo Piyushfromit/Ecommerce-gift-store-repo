@@ -2,57 +2,12 @@
 
 /* Home page Admin Header ############################################## */
 
-.site-header {
-    background-color: #700000;
-    position: sticky;
-    top: 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0px 20px;
-    min-height:40px; 
-    max-height: 50px;
+.custom-bg{
+	background: #2196F3!important;
 }
 
-.logo img {
-    max-height: 35px;
-}
-
-.nav ul {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-}
-
-.nav li {
-    margin: 0;
-}
-
-.nav a {
-    text-decoration: none;
-    color: white;
-}
-
-.user-actions {
-    display: flex;
-    gap: 10px;
-}
-
-.user-actions a {
-    text-decoration: none;
-    color: white;
-    padding: 5px 10px;
-    border: 1px solid white;
-     font-weight: bold;
-    border-radius: 5px;
-}
-
-.user-actions a:hover {
-    background-color: white;
-    color: #700000;
-    font-weight: bold;
-}
-
+/*.info {background-color: #2196F3;}   
+.info:hover {background: #0b7dda;}*/
 
 
 /*  css for  function-header  ***********************************  */

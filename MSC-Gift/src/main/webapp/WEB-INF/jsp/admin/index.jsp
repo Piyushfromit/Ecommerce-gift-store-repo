@@ -4,14 +4,17 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Admin CRM Home page</title>
+<jsp:include page="../admin/include/common.jsp" />
 
-<link rel="stylesheet" type="text/css" href="../resources/css/crm.css">
 </head>
-<body>
-<jsp:include page="../admin/include/adminheader.jsp" />
 
+<body>
+<jsp:include page="../admin/component/navbar.jsp" />
 <jsp:include page="../admin/include/functionheader.jsp" />
+
+
+
 
 <div>
 
