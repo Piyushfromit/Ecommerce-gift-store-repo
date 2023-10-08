@@ -31,7 +31,7 @@
         <form action="submit_category.jsp" method="post">
          <div class="form-group">
 	        <label for="category">Category Name:</label>
-	        <input type="text" class= "form-control" name="categoryname" placeholder="Enter category name" required /> <br>
+	        <input type="text" class= "form-control " name="categoryname" placeholder="Enter category name" required /> <br>
 	
 	        <label for="isEnabled">Is Enabled:</label>
 	        <input type="checkbox" id="isEnabled" name="isEnabled" value="true">
