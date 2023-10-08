@@ -11,19 +11,10 @@
 
 <body>
 <jsp:include page="../admin/component/navbar.jsp" />
-<jsp:include page="../admin/include/functionheader.jsp" />
+<jsp:include page="../admin/component/functionheader.jsp" />
 
 
 
-
-<div>
-
-
-
-
-
-
-</div>
  
 
 

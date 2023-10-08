@@ -2,4 +2,4 @@
  * 
  */
 
- alert("madarchod")
+/* alert("madarchod")*/

@@ -32,6 +32,19 @@ public class AdminController {
 		return "admin/index";
 	}
 	
+	@GetMapping("/viewproduct")
+	public String getAllProduct( final HttpSession session, final Model model) {
+		
+		return "admin/viewproduct";
+	}
+	
+	
+	@GetMapping("/viewcategory")
+	public String getAllCategory( final HttpSession session, final Model model) {
+		
+		return "admin/viewcategory";
+	}
+	
 	
 	@GetMapping("/allusers")
 	public String getAllUsers( final HttpSession session, final Model model) {
