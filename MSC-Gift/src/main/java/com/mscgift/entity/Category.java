@@ -12,30 +12,25 @@ public class Category {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
-	private String category;
+	private String categoryname;
 	private Boolean isEnabled;
-	
-	
 	
 	public Category() {
 		// TODO Auto-generated constructor stub
 	}
 
-
-	public Category(String category, Boolean isEnabled) {
+	public Category(String categoryname, Boolean isEnabled) {
 		super();
-		this.category = category;
+		this.categoryname = categoryname;
 		this.isEnabled = isEnabled;
 	}
 
-
-	public Category(Integer id, String category, Boolean isEnabled) {
+	public Category(Integer id, String categoryname, Boolean isEnabled) {
 		super();
 		this.id = id;
-		this.category = category;
+		this.categoryname = categoryname;
 		this.isEnabled = isEnabled;
 	}
-
 
 	/**
 	 * @return the id
@@ -44,7 +39,6 @@ public class Category {
 		return id;
 	}
 
-
 	/**
 	 * @param id the id to set
 	 */
@@ -52,22 +46,19 @@ public class Category {
 		this.id = id;
 	}
 
-
 	/**
-	 * @return the category
+	 * @return the categoryname
 	 */
-	public String getCategory() {
-		return category;
+	public String getCategoryname() {
+		return categoryname;
 	}
 
-
 	/**
-	 * @param category the category to set
+	 * @param categoryname the categoryname to set
 	 */
-	public void setCategory(String category) {
-		this.category = category;
+	public void setCategoryname(String categoryname) {
+		this.categoryname = categoryname;
 	}
-
 
 	/**
 	 * @return the isEnabled
@@ -76,7 +67,6 @@ public class Category {
 		return isEnabled;
 	}
 
-
 	/**
 	 * @param isEnabled the isEnabled to set
 	 */
@@ -84,12 +74,10 @@ public class Category {
 		this.isEnabled = isEnabled;
 	}
 
-
 	@Override
 	public String toString() {
-		return "Category [id=" + id + ", category=" + category + ", isEnabled=" + isEnabled + "]";
+		return "Category [id=" + id + ", categoryname=" + categoryname + ", isEnabled=" + isEnabled + "]";
 	}
-	
 	
 	
 	

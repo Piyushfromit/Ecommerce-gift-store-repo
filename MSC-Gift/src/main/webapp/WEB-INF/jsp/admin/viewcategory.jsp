@@ -27,24 +27,25 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form action="addcategory" method="post">
-	         <div class="form-group">
-		        <label for="category">Enter Category Name:</label>
-		        <input type="text" class= "form-control " name="categoryname" placeholder="Enter category name" required /> <br>
-		     </div>
-		     <div class="form-group">
-		        <label for="categorystatus">Select Status:</label>
-		        <select id="CategoryStatus">
-					  <option value="true" >Active</option>
-					  <option value="false">Inactive</option>
-				</select>
-		        <br><br>
-		     </div>
-		     <div class= "container text-end" > 
-		        <button type="button"  class ="btn btn-primary" >Add Category</button>
-		         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-	         </div>
-        </form>
+
+			<form action="/admin/addcategory" method="post">
+			    <div class="form-group">
+			        <label for="categoryname">Enter Category Name:</label>
+			        <input type="text" class="form-control" name="categoryname" placeholder="Enter category name" required /><br>
+			    </div>
+			    <div class="form-group">
+			        <label for="isEnabled">Select Status:</label>
+			        <select id="CategoryStatus" name="isEnabled">
+			            <option value="true">Active</option>
+			            <option value="false">Inactive</option>
+			        </select>
+			        <br><br>
+			    </div>
+			    <div class="container text-end">
+			        <button type="submit" class="btn btn-primary">Add Category</button>
+			        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+			    </div>
+			</form>
       </div>
     </div>
   </div>
