@@ -1,5 +1,7 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>  
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -40,10 +42,24 @@
         </div>
         <!-- Category ID -->
         <div class="form-group">
-           <label for="categoryId">Select Product Category:</label>
-           <input type="number" id="categoryId" class= "form-control" name="categoryId" placeholder="Select Category" required><br>
+            <label for="categoryId">Sect category</label>
+            <select id="categoryId" name="categoryId" required>
+              <option value="">${message}</option> 
+              <c:if test="${allActiveCategory.size() > 0}">
+                  <option value="">${message}</option> <!-- Default option -->
+                  <option value="">"${allActiveCategory.get(0).categoryname}"</option>
+                      
+       <%--     <c:forEach items="${allActiveCategory}" var="category" varStatus="loop">
+		            <option value=${category.id}>${category.categoryname}</option>
+		         </c:forEach>    --%>
+		         <c:forEach var="cat" items="${allcat}">
+				   <option value="${cat.key}">${cat.value}</option>
+				 </c:forEach>
+             </c:if>
+            </select> 
         </div>
         <!-- Price -->
+           <!--    <input type="number" id="categoryId" class= "form-control" name="categoryId" placeholder="Select Category" required><br> -->
         <div class="form-group">
 	       <label for="price">Price:</label>
 	       <input type="number" id="price" class= "form-control" name="price" placeholder="Product Price" required><br>
@@ -61,7 +77,7 @@
         <!-- Product Status -->
         <div class="form-group">
 	        <label for="isEnabled">Select Status:</label>
-	        <select id="CategoryStatus" name="isEnabled">
+	        <select id="CategoryStatus" name="isEnabled" required>
 	            <option value="true">Active</option>
 	            <option value="false">Inactive</option>
 	        </select>

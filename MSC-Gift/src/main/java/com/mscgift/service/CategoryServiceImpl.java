@@ -1,5 +1,7 @@
 package com.mscgift.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,6 +21,15 @@ public class CategoryServiceImpl  implements CategoryService {
 	public Category saveCategory(Category category) {
 		Category savedcategory = categoryRepository.save(category);
 		return savedcategory;
+	}
+
+
+	@Override
+	public List<Category> getAllActiveCategory() {
+		
+		List<Category> allActiveCategory = categoryRepository.findByIsEnabled(true);
+		
+		return allActiveCategory;
 	}
 
 }

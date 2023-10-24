@@ -1,6 +1,7 @@
 package com.mscgift.controller;
 
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
+
 
 import com.mscgift.entity.Category;
 import com.mscgift.entity.Product;
@@ -62,7 +64,20 @@ public class AdminController {
 	
 	@GetMapping("/viewproduct")
 	public String viewAllProduct( final HttpSession session, final Model model) {
+		List<Category> allActiveCategory = categoryService.getAllActiveCategory() ;
+		model.addAttribute("allActiveCategory", allActiveCategory);
+		model.addAttribute("message", "message by piyush");
+		for (Category category : allActiveCategory) {
+		    System.out.println(category);
+		}
 		
+		final HashMap<Integer, String> allcat = new HashMap<Integer, String>();
+        for (final Category courses : allActiveCategory) {
+        	 allcat.put(courses.getId(), courses.getCategoryname());
+        	 System.out.println(courses.getId()+"=="+ courses.getCategoryname());
+        }
+        model.addAttribute("allcat", (Object)allcat);
+        
 		return "admin/viewproduct";
 	}
 	@PostMapping("/addproduct")
