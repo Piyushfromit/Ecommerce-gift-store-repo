@@ -1,7 +1,7 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>  
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
+    
 <!DOCTYPE html>
 <html>
 <head>
@@ -47,14 +47,14 @@
               <option value="">${message}</option> 
               <c:if test="${allActiveCategory.size() > 0}">
                   <option value="">${message}</option> <!-- Default option -->
-                  <option value="">"${allActiveCategory.get(0).categoryname}"</option>
+                  <option value="">${allActiveCategory.get(0).categoryname}</option>
                       
-       <%--     <c:forEach items="${allActiveCategory}" var="category" varStatus="loop">
+                 <c:forEach items="${allActiveCategory}" var="category">
 		            <option value=${category.id}>${category.categoryname}</option>
-		         </c:forEach>    --%>
-		         <c:forEach var="cat" items="${allcat}">
+		         </c:forEach>    
+		      <%--     <c:forEach var="cat" items="${allcat}">
 				   <option value="${cat.key}">${cat.value}</option>
-				 </c:forEach>
+				 </c:forEach>--%>
              </c:if>
             </select> 
         </div>
