@@ -42,25 +42,18 @@
         </div>
         <!-- Category ID -->
         <div class="form-group">
-            <label for="categoryId">Sect category</label>
-            <select id="categoryId" name="categoryId" required>
-              <option value="">${message}</option> 
+            <label for="categoryId">Select category</label>
+             <select id="categoryId" name="categoryId" required>
+             <option value="">Please select a category</option> <!-- Add an empty default option -->
               <c:if test="${allActiveCategory.size() > 0}">
-                  <option value="">${message}</option> <!-- Default option -->
-                  <option value="">${allActiveCategory.get(0).categoryname}</option>
-                      
                  <c:forEach items="${allActiveCategory}" var="category">
-		            <option value=${category.id}>${category.categoryname}</option>
+		            <option value="${category.id}">${category.categoryname}</option>
 		         </c:forEach>    
-		      <%--     <c:forEach var="cat" items="${allcat}">
-				   <option value="${cat.key}">${cat.value}</option>
-				 </c:forEach>--%>
              </c:if>
             </select> 
         </div>
-        <!-- Price -->
-           <!--    <input type="number" id="categoryId" class= "form-control" name="categoryId" placeholder="Select Category" required><br> -->
-        <div class="form-group">
+         <!-- Product Price -->
+         <div class="form-group">
 	       <label for="price">Price:</label>
 	       <input type="number" id="price" class= "form-control" name="price" placeholder="Product Price" required><br>
         </div>

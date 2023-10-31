@@ -51,6 +51,9 @@ public class AdminController {
 	@GetMapping("/viewcategory")
 	public String viewAllCategory( final HttpSession session, final Model model) {
 		
+		List<Category> allActiveCategory = categoryService.getAllActiveCategory() ;
+		model.addAttribute("allActiveCategory", allActiveCategory);
+		
 		return "admin/viewcategory";
 	}
 	
@@ -66,17 +69,6 @@ public class AdminController {
 	public String viewAllProduct( final HttpSession session, final Model model) {
 		List<Category> allActiveCategory = categoryService.getAllActiveCategory() ;
 		model.addAttribute("allActiveCategory", allActiveCategory);
-		model.addAttribute("message", "message by piyush");
-		for (Category category : allActiveCategory) {
-		    System.out.println(category);
-		}
-		
-		final HashMap<Integer, String> allcat = new HashMap<Integer, String>();
-        for (final Category courses : allActiveCategory) {
-        	 allcat.put(courses.getId(), courses.getCategoryname());
-        	 System.out.println(courses.getId()+"=="+ courses.getCategoryname());
-        }
-        model.addAttribute("allcat", (Object)allcat);
         
 		return "admin/viewproduct";
 	}
