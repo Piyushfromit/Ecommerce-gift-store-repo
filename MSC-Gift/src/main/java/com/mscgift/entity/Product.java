@@ -61,27 +61,29 @@ public class Product {
 
     private Date createdDate;
     private Date updatedDate;
-//	@Id
-//	@GeneratedValue(strategy = GenerationType.IDENTITY)
-//	private Integer id; 
-//	private String productName; 
-//	// @Column(length = 3000, name ="description")
-//	private String description; 
-//	private Integer categoryId;  
-//	private BigDecimal price; 
-//	private BigDecimal discountedPrice; 
-//	private int stockQuantity;    
-//	private Boolean isEnabled;   
-//	private String imageOne; 
-//	private String imageTwo;
-//	private String imageThree;
-//	private String imageFour;
-//	private double productWeight; 
-//	private double productLength;
-//	private double productWidth;
-//	private double productHeight;
-//	private Date createdDate;
-//	private Date updatedDate; 
+    
+	
+	//	@Id
+	//	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	//	private Integer id; 
+	//	private String productName; 
+	//	// @Column(length = 3000, name ="description")
+	//	private String description; 
+	//	private Integer categoryId;  
+	//	private BigDecimal price; 
+	//	private BigDecimal discountedPrice; 
+	//	private int stockQuantity;    
+	//	private Boolean isEnabled;   
+	//	private String imageOne; 
+	//	private String imageTwo;
+	//	private String imageThree;
+	//	private String imageFour;
+	//	private double productWeight; 
+	//	private double productLength;
+	//	private double productWidth;
+	//	private double productHeight;
+	//	private Date createdDate;
+	//	private Date updatedDate; 
 	
 	// private Vendor vendor; // Vendor/Supplier Information
 	// private SalesHistory salesHistory; // Sales History
@@ -101,15 +103,21 @@ public class Product {
 	// private double parcelLength;
 	// private double parcelWidth;
 	
-	
-	protected void name() {
-		
-	}
 
-	public Product(Integer id, String productName, String description, Integer categoryId, BigDecimal price,
-			BigDecimal discountedPrice, int stockQuantity, Boolean isEnabled, String imageOne, String imageTwo,
-			String imageThree, String imageFour, double productWeight, double productLength, double productWidth,
-			double productHeight, Date createdDate, Date updatedDate) {
+    public Product() {
+	   // TODO Auto-generated constructor stub
+    }
+
+	public Product(Integer id, @NotBlank(message = "Product name is required") String productName, String description,
+			@NotNull(message = "Category ID is required") Integer categoryId,
+			@NotNull(message = "Price is required") BigDecimal price,
+			@NotNull(message = "Discounted price is required") BigDecimal discountedPrice,
+			@NotNull(message = "Stock quantity is required") int stockQuantity,
+			@NotNull(message = "Is enabled status is required") Boolean isEnabled, String imageOne, String imageTwo,
+			String imageThree, String imageFour, @NotNull(message = "Product weight is required") double productWeight,
+			@NotNull(message = "Product length is required") double productLength,
+			@NotNull(message = "Product width is required") double productWidth,
+			@NotNull(message = "Product height is required") double productHeight, Date createdDate, Date updatedDate) {
 		super();
 		this.id = id;
 		this.productName = productName;
@@ -131,29 +139,37 @@ public class Product {
 		this.updatedDate = updatedDate;
 	}
 
-//	public Product(String productName, String description, Integer categoryId, BigDecimal price,
-//			BigDecimal discountedPrice, int stockQuantity, Boolean isEnabled, String imageOne, String imageTwo,
-//			String imageThree, String imageFour, double productWeight, double productLength, double productWidth,
-//			double productHeight, Date createdDate, Date updatedDate) {
-//		super();
-//		this.productName = productName;
-//		this.description = description;
-//		this.categoryId = categoryId;
-//		this.price = price;
-//		this.discountedPrice = discountedPrice;
-//		this.stockQuantity = stockQuantity;
-//		this.isEnabled = isEnabled;
-//		this.imageOne = imageOne;
-//		this.imageTwo = imageTwo;
-//		this.imageThree = imageThree;
-//		this.imageFour = imageFour;
-//		this.productWeight = productWeight;
-//		this.productLength = productLength;
-//		this.productWidth = productWidth;
-//		this.productHeight = productHeight;
-//		this.createdDate = createdDate;
-//		this.updatedDate = updatedDate;
-//	}
+
+	public Product(@NotBlank(message = "Product name is required") String productName, String description,
+			@NotNull(message = "Category ID is required") Integer categoryId,
+			@NotNull(message = "Price is required") BigDecimal price,
+			@NotNull(message = "Discounted price is required") BigDecimal discountedPrice,
+			@NotNull(message = "Stock quantity is required") int stockQuantity,
+			@NotNull(message = "Is enabled status is required") Boolean isEnabled, String imageOne, String imageTwo,
+			String imageThree, String imageFour, @NotNull(message = "Product weight is required") double productWeight,
+			@NotNull(message = "Product length is required") double productLength,
+			@NotNull(message = "Product width is required") double productWidth,
+			@NotNull(message = "Product height is required") double productHeight, Date createdDate, Date updatedDate) {
+		super();
+		this.productName = productName;
+		this.description = description;
+		this.categoryId = categoryId;
+		this.price = price;
+		this.discountedPrice = discountedPrice;
+		this.stockQuantity = stockQuantity;
+		this.isEnabled = isEnabled;
+		this.imageOne = imageOne;
+		this.imageTwo = imageTwo;
+		this.imageThree = imageThree;
+		this.imageFour = imageFour;
+		this.productWeight = productWeight;
+		this.productLength = productLength;
+		this.productWidth = productWidth;
+		this.productHeight = productHeight;
+		this.createdDate = createdDate;
+		this.updatedDate = updatedDate;
+	}
+
 
 	/**
 	 * @return the id
@@ -162,12 +178,14 @@ public class Product {
 		return id;
 	}
 
+
 	/**
 	 * @param id the id to set
 	 */
 	public void setId(Integer id) {
 		this.id = id;
 	}
+
 
 	/**
 	 * @return the productName
@@ -176,12 +194,14 @@ public class Product {
 		return productName;
 	}
 
+
 	/**
 	 * @param productName the productName to set
 	 */
 	public void setProductName(String productName) {
 		this.productName = productName;
 	}
+
 
 	/**
 	 * @return the description
@@ -190,12 +210,14 @@ public class Product {
 		return description;
 	}
 
+
 	/**
 	 * @param description the description to set
 	 */
 	public void setDescription(String description) {
 		this.description = description;
 	}
+
 
 	/**
 	 * @return the categoryId
@@ -204,12 +226,14 @@ public class Product {
 		return categoryId;
 	}
 
+
 	/**
 	 * @param categoryId the categoryId to set
 	 */
 	public void setCategoryId(Integer categoryId) {
 		this.categoryId = categoryId;
 	}
+
 
 	/**
 	 * @return the price
@@ -218,12 +242,14 @@ public class Product {
 		return price;
 	}
 
+
 	/**
 	 * @param price the price to set
 	 */
 	public void setPrice(BigDecimal price) {
 		this.price = price;
 	}
+
 
 	/**
 	 * @return the discountedPrice
@@ -232,12 +258,14 @@ public class Product {
 		return discountedPrice;
 	}
 
+
 	/**
 	 * @param discountedPrice the discountedPrice to set
 	 */
 	public void setDiscountedPrice(BigDecimal discountedPrice) {
 		this.discountedPrice = discountedPrice;
 	}
+
 
 	/**
 	 * @return the stockQuantity
@@ -246,12 +274,14 @@ public class Product {
 		return stockQuantity;
 	}
 
+
 	/**
 	 * @param stockQuantity the stockQuantity to set
 	 */
 	public void setStockQuantity(int stockQuantity) {
 		this.stockQuantity = stockQuantity;
 	}
+
 
 	/**
 	 * @return the isEnabled
@@ -260,12 +290,14 @@ public class Product {
 		return isEnabled;
 	}
 
+
 	/**
 	 * @param isEnabled the isEnabled to set
 	 */
 	public void setIsEnabled(Boolean isEnabled) {
 		this.isEnabled = isEnabled;
 	}
+
 
 	/**
 	 * @return the imageOne
@@ -274,12 +306,14 @@ public class Product {
 		return imageOne;
 	}
 
+
 	/**
 	 * @param imageOne the imageOne to set
 	 */
 	public void setImageOne(String imageOne) {
 		this.imageOne = imageOne;
 	}
+
 
 	/**
 	 * @return the imageTwo
@@ -288,12 +322,14 @@ public class Product {
 		return imageTwo;
 	}
 
+
 	/**
 	 * @param imageTwo the imageTwo to set
 	 */
 	public void setImageTwo(String imageTwo) {
 		this.imageTwo = imageTwo;
 	}
+
 
 	/**
 	 * @return the imageThree
@@ -302,12 +338,14 @@ public class Product {
 		return imageThree;
 	}
 
+
 	/**
 	 * @param imageThree the imageThree to set
 	 */
 	public void setImageThree(String imageThree) {
 		this.imageThree = imageThree;
 	}
+
 
 	/**
 	 * @return the imageFour
@@ -316,12 +354,14 @@ public class Product {
 		return imageFour;
 	}
 
+
 	/**
 	 * @param imageFour the imageFour to set
 	 */
 	public void setImageFour(String imageFour) {
 		this.imageFour = imageFour;
 	}
+
 
 	/**
 	 * @return the productWeight
@@ -330,12 +370,14 @@ public class Product {
 		return productWeight;
 	}
 
+
 	/**
 	 * @param productWeight the productWeight to set
 	 */
 	public void setProductWeight(double productWeight) {
 		this.productWeight = productWeight;
 	}
+
 
 	/**
 	 * @return the productLength
@@ -344,12 +386,14 @@ public class Product {
 		return productLength;
 	}
 
+
 	/**
 	 * @param productLength the productLength to set
 	 */
 	public void setProductLength(double productLength) {
 		this.productLength = productLength;
 	}
+
 
 	/**
 	 * @return the productWidth
@@ -358,12 +402,14 @@ public class Product {
 		return productWidth;
 	}
 
+
 	/**
 	 * @param productWidth the productWidth to set
 	 */
 	public void setProductWidth(double productWidth) {
 		this.productWidth = productWidth;
 	}
+
 
 	/**
 	 * @return the productHeight
@@ -372,12 +418,14 @@ public class Product {
 		return productHeight;
 	}
 
+
 	/**
 	 * @param productHeight the productHeight to set
 	 */
 	public void setProductHeight(double productHeight) {
 		this.productHeight = productHeight;
 	}
+
 
 	/**
 	 * @return the createdDate
@@ -386,12 +434,14 @@ public class Product {
 		return createdDate;
 	}
 
+
 	/**
 	 * @param createdDate the createdDate to set
 	 */
 	public void setCreatedDate(Date createdDate) {
 		this.createdDate = createdDate;
 	}
+
 
 	/**
 	 * @return the updatedDate
@@ -400,12 +450,14 @@ public class Product {
 		return updatedDate;
 	}
 
+
 	/**
 	 * @param updatedDate the updatedDate to set
 	 */
 	public void setUpdatedDate(Date updatedDate) {
 		this.updatedDate = updatedDate;
 	}
+
 
 	@Override
 	public String toString() {
@@ -417,12 +469,8 @@ public class Product {
 				+ productHeight + ", createdDate=" + createdDate + ", updatedDate=" + updatedDate + "]";
 	}
 	
-	
-	
-	
-	
-	
-	
+    
+    
 	
 	
 	

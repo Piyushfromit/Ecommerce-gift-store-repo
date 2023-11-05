@@ -11,6 +11,6 @@ public interface CategoryService {
 	
 	public List<Category> getAllActiveCategory();
 	
-	
+	public List<Category> getAllCategory();
 	
 }

@@ -1,16 +1,63 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib prefix="c" uri="jakarta.tags.core" %>
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/functions" prefix = "fn" %>
+
+    
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <jsp:include page="../admin/include/common.jsp" />
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
+
+
 </head>
 <body>
 
 <jsp:include page="../admin/component/navbar.jsp" />
 
+
+<!-- View Category Table Start-->
+
+<div class="container mt-3">
+  <h2>Category List</h2>
+ <table id="example" class="display" style="width:100%">
+       <thead>
+      <tr>
+        <th>ID</th>
+        <th>Category Name</th>
+        <th>Status</th>
+        <th>Edit</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <c:forEach items="${allCategoryList}" var="category" varStatus="loop">
+        
+        <tr>
+          <td>${category.id}</td>
+          <td>${category.categoryname}</td>
+          <td>${category.isEnabled ? 'Active' : 'Inactive'}</td>
+          <td><button>Edit</button></td>
+          <td><button>Del</button></td>
+        </tr>
+      </c:forEach>
+    </tbody>
+        
+    </table>
+    
+    <script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script  type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+    <script>
+        $(document).ready(function () {
+        $('#example').DataTable();
+        });
+    </script>
+</div>
+
+<!-- View Category Table end -->
 
 <!-- start Add Category Model  -->
 
@@ -53,19 +100,6 @@
 
 
 <!-- End Add Category Model  -->
-
-
-
-
-<!-- View Product list start -->
-
-
-
-
-
-<!-- View Product list start -->
-
-
 
 
 

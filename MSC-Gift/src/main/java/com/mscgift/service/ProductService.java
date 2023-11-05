@@ -2,6 +2,7 @@ package com.mscgift.service;
 
 
 import java.io.IOException;
+import java.util.List;
 
 import org.springframework.web.multipart.MultipartFile;
 
@@ -11,6 +12,7 @@ public interface ProductService {
 	
 	public Product saveProduct( Product product, MultipartFile[] imageFiles)throws IOException;
 	
+	public List<Product> getAllProduct();
 	
 	
 	

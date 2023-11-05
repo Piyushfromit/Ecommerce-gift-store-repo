@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.mscgift.entity.Category;
 import com.mscgift.entity.Product;
 import com.mscgift.repository.ProductRepository;
 
@@ -82,6 +83,16 @@ public class ProductServiceImpl implements ProductService {
 
         return uniqueName.toString();
     }
+
+    
+    
+	@Override
+	public List<Product> getAllProduct() {
+		
+        List<Product> allProduct = productRepository.findAll();
+		
+		return allProduct;
+	}
    
 
 

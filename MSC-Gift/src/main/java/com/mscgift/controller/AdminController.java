@@ -50,10 +50,8 @@ public class AdminController {
 	
 	@GetMapping("/viewcategory")
 	public String viewAllCategory( final HttpSession session, final Model model) {
-		
-		List<Category> allActiveCategory = categoryService.getAllActiveCategory() ;
-		model.addAttribute("allActiveCategory", allActiveCategory);
-		
+		List<Category> allCategory = categoryService.getAllCategory() ;
+		model.addAttribute("allCategoryList", allCategory);
 		return "admin/viewcategory";
 	}
 	
@@ -61,17 +59,22 @@ public class AdminController {
     public String addCategory(@ModelAttribute final Category category) {
 		categoryService.saveCategory(category);
 		System.out.println("category Added");
-        return "admin/viewcategory"; 
+        return "redirect:/admin/viewcategory"; 
     }
 	
 	
 	@GetMapping("/viewproduct")
 	public String viewAllProduct( final HttpSession session, final Model model) {
+		List<Product> allProduct = productService.getAllProduct() ;
 		List<Category> allActiveCategory = categoryService.getAllActiveCategory() ;
 		model.addAttribute("allActiveCategory", allActiveCategory);
-        
+		model.addAttribute("allProductList", allProduct);
 		return "admin/viewproduct";
+		
 	}
+	
+	
+	
 	@PostMapping("/addproduct")
 	public String addProduct(@ModelAttribute Product product, 
 	                         @RequestParam("imageFileOne") MultipartFile imageOne,
@@ -86,25 +89,10 @@ public class AdminController {
 	    } catch (IOException e) {
 	        e.printStackTrace();
 	    }
-	    return "admin/viewproduct";
+	    return "redirect:/admin/viewproduct";
 	}
 	
 
-
-
-
-
-	
-	
-//	@PostMapping("/addproduct")
-//	public String addProduct( @ModelAttribute final Product product, final HttpSession session, final Model model) {
-//		productService.saveproduct(product);
-//		System.out.println("Product Added");
-//		return "admin/viewproduct";
-//	}
-	
-	
-	
 	@GetMapping("/allusers")
 	public String getAllUsers( final HttpSession session, final Model model) {
 		List<Users> users = usersService.findAllUsers();
