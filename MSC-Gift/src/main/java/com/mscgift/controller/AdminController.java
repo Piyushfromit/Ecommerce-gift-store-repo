@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -80,7 +81,27 @@ public class AdminController {
 	@PostMapping("/updatecategory")
 	public String editCategory(@ModelAttribute final Category category ,final Model model) {
 		// categoryService.saveCategory(category);
-		System.out.println("updated beta");
+		int catId = category.getId();
+		Optional<Category> existcategory = categoryRepository.findById(catId);
+		
+		if(existcategory.isPresent()) {
+			existcategory.get().setCategoryname(category.getCategoryname());
+			existcategory.get().setIsEnabled(category.getIsEnabled());
+			categoryService.saveCategory(existcategory.get());
+			System.out.println("Category Updated");
+		}
+        return "redirect:/admin/viewcategory"; 
+    }
+	
+	
+	@GetMapping("/deletecategory/{id}")
+    public String deleteStudent(@PathVariable int id) {
+		
+		Optional<Category> category = categoryRepository.findById(id); // Implement
+        if (category.isPresent()) {
+        	categoryRepository.deleteById(id);
+        }
+        System.out.println("Deleted");
         return "redirect:/admin/viewcategory"; 
     }
 	

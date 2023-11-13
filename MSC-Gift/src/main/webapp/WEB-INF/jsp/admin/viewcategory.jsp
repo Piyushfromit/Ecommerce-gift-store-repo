@@ -41,7 +41,7 @@
           <td>${category.categoryname}</td>
           <td>${category.isEnabled ? 'Active' : 'Inactive'}</td>
           <td><button onclick="editCategory(${category.id})">Edit</button></td>
-          <td><button>Del</button></td>
+          <td><a href="/admin/deletecategory/${category.id}"><button>Del</button></a></td>
         </tr>
       </c:forEach>
     </tbody>

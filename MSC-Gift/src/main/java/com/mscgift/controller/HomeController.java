@@ -14,7 +14,7 @@ public class HomeController {
 	
 	@GetMapping("/")
 	public String HomePage() {
-		
+		System.out.println("Returned to home page ");
 		return "index";
 		
 	}
