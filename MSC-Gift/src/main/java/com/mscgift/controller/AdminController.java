@@ -4,21 +4,26 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
 
 import com.mscgift.entity.Category;
 import com.mscgift.entity.Product;
 import com.mscgift.entity.Users;
+import com.mscgift.repository.CategoryRepository;
 import com.mscgift.service.CategoryService;
 import com.mscgift.service.ProductService;
 import com.mscgift.service.UsersService;
@@ -37,6 +42,8 @@ public class AdminController {
 	@Autowired
 	public CategoryService categoryService;
 	
+	@Autowired
+	public CategoryRepository   categoryRepository;
 	
 	@Autowired
 	public ProductService productService;
@@ -61,7 +68,21 @@ public class AdminController {
 		System.out.println("category Added");
         return "redirect:/admin/viewcategory"; 
     }
-	
+	@GetMapping("/getCategoryDetails")
+	    public ResponseEntity<Category> viewCategoryById(@RequestParam int categoryId, final Model model ) {
+	        // Retrieve category details from the database based on categoryId
+	        Optional<Category> category = categoryRepository.findById(categoryId); // Implement this method in your service
+	        model.addAttribute("cat", categoryId);
+	        System.out.println( "cat id"+ "== "+categoryId);
+	        return ResponseEntity.ok(category.get());
+	}
+	 
+	@PostMapping("/updatecategory/{categoryId}")
+	 public String editCategory(@PathVariable final int categoryId,@ModelAttribute final Category category ,final Model model) {
+		// categoryService.saveCategory(category);
+		System.out.println("updated beta");
+        return "redirect:/admin/viewcategory"; 
+    }
 	
 	@GetMapping("/viewproduct")
 	public String viewAllProduct( final HttpSession session, final Model model) {

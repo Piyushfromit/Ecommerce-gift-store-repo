@@ -40,7 +40,7 @@
           <td>${category.id}</td>
           <td>${category.categoryname}</td>
           <td>${category.isEnabled ? 'Active' : 'Inactive'}</td>
-          <td><button>Edit</button></td>
+          <td><button onclick="editCategory(${category.id})">Edit</button></td>
           <td><button>Del</button></td>
         </tr>
       </c:forEach>
@@ -82,7 +82,7 @@
 			    </div>
 			    <div class="form-group">
 			        <label for="isEnabled">Select Status:</label>
-			        <select id="CategoryStatus" name="isEnabled">
+			        <select id="CategoryStatus" name="isEnabled" required>
 			            <option value="true">Active</option>
 			            <option value="false">Inactive</option>
 			        </select>
@@ -98,11 +98,66 @@
   </div>
 </div>
 
-
 <!-- End Add Category Model  -->
 
+<!-- start Edit Category Model  -->
+
+<div class="modal fade" id="editCategoryModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" >
+    <div class="modal-content">
+      <div class="modal-header custom-bg text-white">
+        <h5 class="modal-title " id="exampleModalLabel">Edit Category Details:</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+
+		 <form id="editCategoryForm" action="/admin/updatecategory/${cat}" method="post" >
+		       <div class="form-group">
+			      <label for="categoryname">Enter Category Name:</label>
+		          <input type="text" class="form-control"  id="editCategoryName" name="categoryname" required/><br>
+		       </div>
+		       <div class="form-group">
+				   <label for="isEnabled">Select Status:</label>
+				   <select id="CategoryStatus" name="isEnabled" required>
+				       <option value="true">Active</option>
+				       <option value="false">Inactive</option>
+				   </select>
+               </div>
+		       <h1></h1>
+		       <div class="container text-end">
+		       <!-- Other input fields for editing category details -->
+		       <button type="submit" class="btn btn-primary">Save Changes </button>
+		       <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+		       </div>
+	     </form>
+	     
+	    
+      </div>
+    </div>
+  </div>
+</div>
 
 
+<script>
+    function editCategory(categoryId) {
+        // Fetch category details using AJAX and populate the modal
+        $.get('/admin/getCategoryDetails', { categoryId: categoryId })
+            .done(function (data) {
+                // Populate the modal with existing category details
+                $('#editCategoryName').val(data.categoryname);
+                $('#editCategoryStatus').val(data.isEnabled.toString());
+                /* $('#editCategoryStatus').val(data.isEnabled.toString()).prop('selected', true); */
+
+                // Display the modal for editing
+                $('#editCategoryModal').modal('show');
+            })
+            .fail(function (error) {
+                console.log(error);
+            });
+    }
+</script>
+
+<!-- End Edit Category Model  -->
 
 
 
