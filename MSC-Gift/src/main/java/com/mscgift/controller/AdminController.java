@@ -69,16 +69,16 @@ public class AdminController {
         return "redirect:/admin/viewcategory"; 
     }
 	@GetMapping("/getCategoryDetails")
-	    public ResponseEntity<Category> viewCategoryById(@RequestParam int categoryId, final Model model ) {
+	    public ResponseEntity<Category> viewCategoryById(@RequestParam int categoryId, final Model model, final HttpSession session ) {
 	        // Retrieve category details from the database based on categoryId
 	        Optional<Category> category = categoryRepository.findById(categoryId); // Implement this method in your service
-	        model.addAttribute("cat", categoryId);
+	        session.setAttribute("cat", categoryId);
 	        System.out.println( "cat id"+ "== "+categoryId);
 	        return ResponseEntity.ok(category.get());
 	}
 	 
-	@PostMapping("/updatecategory/{categoryId}")
-	 public String editCategory(@PathVariable final int categoryId,@ModelAttribute final Category category ,final Model model) {
+	@PostMapping("/updatecategory")
+	public String editCategory(@ModelAttribute final Category category ,final Model model) {
 		// categoryService.saveCategory(category);
 		System.out.println("updated beta");
         return "redirect:/admin/viewcategory"; 

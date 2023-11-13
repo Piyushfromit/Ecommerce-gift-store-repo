@@ -111,7 +111,11 @@
       </div>
       <div class="modal-body">
 
-		 <form id="editCategoryForm" action="/admin/updatecategory/${cat}" method="post" >
+		 <form id="editCategoryForm" action="/admin/updatecategory" method="post" >
+		       <div class="form-group"  style="display: none;">
+			      <label for="id">Enter Category Id:</label>
+		          <input type="text" class="form-control"  id="editCategoryId" name="id" required/><br>
+		       </div>
 		       <div class="form-group">
 			      <label for="categoryname">Enter Category Name:</label>
 		          <input type="text" class="form-control"  id="editCategoryName" name="categoryname" required/><br>
@@ -144,6 +148,7 @@
         $.get('/admin/getCategoryDetails', { categoryId: categoryId })
             .done(function (data) {
                 // Populate the modal with existing category details
+                $('#editCategoryId').val(data.id);
                 $('#editCategoryName').val(data.categoryname);
                 $('#editCategoryStatus').val(data.isEnabled.toString());
                 /* $('#editCategoryStatus').val(data.isEnabled.toString()).prop('selected', true); */
