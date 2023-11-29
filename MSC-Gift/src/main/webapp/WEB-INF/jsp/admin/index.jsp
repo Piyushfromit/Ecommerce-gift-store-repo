@@ -11,6 +11,7 @@
 
 <body>
 <jsp:include page="../admin/component/navbar.jsp" />
+<jsp:include page="../admin/component/sidebar.jsp" />
 <jsp:include page="../admin/component/functionheader.jsp" />
 
 
