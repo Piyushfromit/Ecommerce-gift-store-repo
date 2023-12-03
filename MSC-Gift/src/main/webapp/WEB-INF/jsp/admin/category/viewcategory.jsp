@@ -9,14 +9,15 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<jsp:include page="../admin/include/common.jsp" />
+<jsp:include page="../component/common.jsp" />
+<!-- Table CSS -->
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
 
-
 </head>
+
 <body>
 
-<jsp:include page="../admin/component/navbar.jsp" />
+<jsp:include page="../component/navbar.jsp" />
 
 
 <!-- View Category Table Start-->
@@ -40,7 +41,8 @@
           <td>${category.id}</td>
           <td>${category.categoryname}</td>
           <td>${category.isEnabled ? 'Active' : 'Inactive'}</td>
-          <td><button onclick="editCategory(${category.id})">Edit</button></td>
+          <%-- <td><button onclick="editCategory(${category.id})">Edit</button></td> --%>
+          <td><a href="/admin/editcategory/${category.id}"><button>Edit</button></a></td>
           <td><a href="/admin/deletecategory/${category.id}"><button>Del</button></a></td>
         </tr>
       </c:forEach>
@@ -50,55 +52,13 @@
     
     <script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <script  type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
-    <script>
-        $(document).ready(function () {
-        $('#example').DataTable();
-        });
-    </script>
+    <script>  $(document).ready(function () { $('#example').DataTable();  }); </script>
+    <a href="/admin/addcategory" class="btn btn-primary">Add Category</a>
 </div>
 
 <!-- View Category Table end -->
 
-<!-- start Add Category Model  -->
 
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addCategoryModal">
-  Add Category
-</button>
-
-
-<div class="modal fade" id="addCategoryModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg" >
-    <div class="modal-content">
-      <div class="modal-header custom-bg text-white">
-        <h5 class="modal-title " id="exampleModalLabel">Fill Category Details:</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-
-			<form action="/admin/addcategory" method="post">
-			    <div class="form-group">
-			        <label for="categoryname">Enter Category Name:</label>
-			        <input type="text" class="form-control" name="categoryname" placeholder="Enter category name" required /><br>
-			    </div>
-			    <div class="form-group">
-			        <label for="isEnabled">Select Status:</label>
-			        <select id="CategoryStatus" name="isEnabled" required>
-			            <option value="true">Active</option>
-			            <option value="false">Inactive</option>
-			        </select>
-			        <br><br>
-			    </div>
-			    <div class="container text-end">
-			        <button type="submit" class="btn btn-primary">Add Category</button>
-			        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-			    </div>
-			</form>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- End Add Category Model  -->
 
 <!-- start Edit Category Model  -->
 

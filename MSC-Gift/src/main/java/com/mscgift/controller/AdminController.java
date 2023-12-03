@@ -25,6 +25,7 @@ import com.mscgift.entity.Category;
 import com.mscgift.entity.Product;
 import com.mscgift.entity.Users;
 import com.mscgift.repository.CategoryRepository;
+import com.mscgift.repository.ProductRepository;
 import com.mscgift.service.CategoryService;
 import com.mscgift.service.ProductService;
 import com.mscgift.service.UsersService;
@@ -49,6 +50,8 @@ public class AdminController {
 	@Autowired
 	public ProductService productService;
 	
+	@Autowired
+	public ProductRepository productRepository;
 	
 	@GetMapping("/home")
 	public String adminDashboard() {
@@ -60,7 +63,12 @@ public class AdminController {
 	public String viewAllCategory( final HttpSession session, final Model model) {
 		List<Category> allCategory = categoryService.getAllCategory() ;
 		model.addAttribute("allCategoryList", allCategory);
-		return "admin/viewcategory";
+		return "admin/category/viewcategory";
+	}
+	
+	@GetMapping("/addcategory")
+	public String addCategory( final HttpSession session, final Model model) {
+		return "admin/category/addcategory";
 	}
 	
 	@PostMapping("/addcategory")
@@ -69,34 +77,30 @@ public class AdminController {
 		System.out.println("category Added");
         return "redirect:/admin/viewcategory"; 
     }
-	@GetMapping("/getCategoryDetails")
-	    public ResponseEntity<Category> viewCategoryById(@RequestParam int categoryId, final Model model, final HttpSession session ) {
-	        // Retrieve category details from the database based on categoryId
-	        Optional<Category> category = categoryRepository.findById(categoryId); // Implement this method in your service
-	        session.setAttribute("cat", categoryId);
-	        System.out.println( "cat id"+ "== "+categoryId);
-	        return ResponseEntity.ok(category.get());
+	
+	@GetMapping("/editcategory/{id}")
+	public String getMapingEditCategory(@PathVariable Integer id, final HttpSession session, final Model model) {
+		model.addAttribute("id", id);
+		Optional<Category> category = categoryRepository.findById(id);
+		model.addAttribute("command",category.get());
+		return "admin/category/editcategory";
 	}
 	 
-	@PostMapping("/updatecategory")
-	public String editCategory(@ModelAttribute final Category category ,final Model model) {
+	@PostMapping("/editcategory/{id}")
+	public String editCategory(@PathVariable Integer id, @ModelAttribute final Category category ,final Model model) {
 		// categoryService.saveCategory(category);
-		int catId = category.getId();
-		Optional<Category> existcategory = categoryRepository.findById(catId);
-		
+		Optional<Category> existcategory = categoryRepository.findById(id);
 		if(existcategory.isPresent()) {
 			existcategory.get().setCategoryname(category.getCategoryname());
 			existcategory.get().setIsEnabled(category.getIsEnabled());
 			categoryService.saveCategory(existcategory.get());
 			System.out.println("Category Updated");
 		}
-        return "redirect:/admin/viewcategory"; 
+		return "redirect:/admin/viewcategory";  
     }
-	
 	
 	@GetMapping("/deletecategory/{id}")
     public String deleteStudent(@PathVariable int id) {
-		
 		Optional<Category> category = categoryRepository.findById(id); // Implement
         if (category.isPresent()) {
         	categoryRepository.deleteById(id);
@@ -108,17 +112,20 @@ public class AdminController {
 	@GetMapping("/viewproduct")
 	public String viewAllProduct( final HttpSession session, final Model model) {
 		List<Product> allProduct = productService.getAllProduct() ;
-		List<Category> allActiveCategory = categoryService.getAllActiveCategory() ;
-		model.addAttribute("allActiveCategory", allActiveCategory);
 		model.addAttribute("allProductList", allProduct);
-		return "admin/viewproduct";
+		return "admin/product/viewproduct";
 		
 	}
 	
-	
+	@GetMapping("/addproduct")
+	public String getMapingAddProduct( final HttpSession session, final Model model) {
+		List<Category> allActiveCategory = categoryService.getAllActiveCategory() ;
+		model.addAttribute("allActiveCategory", allActiveCategory);
+		return "admin/product/addproduct";
+	}
 	
 	@PostMapping("/addproduct")
-	public String addProduct(@ModelAttribute Product product, 
+	public String postMapingAddProduct(@ModelAttribute Product product, 
 	                         @RequestParam("imageFileOne") MultipartFile imageOne,
 	                         @RequestParam("imageFileTwo") MultipartFile imageTwo,
 	                         @RequestParam("imageFileThree") MultipartFile imageThree,
@@ -134,7 +141,30 @@ public class AdminController {
 	    return "redirect:/admin/viewproduct";
 	}
 	
+	@GetMapping("/editproduct/{id}")
+	public String getMapingEditProduct(@PathVariable Integer id, final HttpSession session, final Model model) {
+		model.addAttribute("id", id);
+		List<Category> allActiveCategory = categoryService.getAllActiveCategory() ;
+		model.addAttribute("allActiveCategory", allActiveCategory);
+		Optional<Product> prodict = productRepository.findById(id);
+		model.addAttribute("command",prodict.get());
+		return "admin/product/editproduct";
+	}
 
+	@PostMapping("/editproduct/{id}")
+	public String postMapingEditProduct(@PathVariable Integer id, @ModelAttribute final Category category ,final Model model) {
+//      categoryService.saveCategory(category);
+//		Optional<Category> existcategory = categoryRepository.findById(id);
+//		if(existcategory.isPresent()) {
+//			existcategory.get().setCategoryname(category.getCategoryname());
+//			existcategory.get().setIsEnabled(category.getIsEnabled());
+//			categoryService.saveCategory(existcategory.get());
+//			System.out.println("Category Updated");
+//		}
+		return "redirect:/admin/viewproduct";  
+    }
+	
+	
 	@GetMapping("/allusers")
 	public String getAllUsers( final HttpSession session, final Model model) {
 		List<Users> users = usersService.findAllUsers();
