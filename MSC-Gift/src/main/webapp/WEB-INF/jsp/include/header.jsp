@@ -1,11 +1,10 @@
+
+
 <div class="site-header">
    <p class="h-logo">
-      <a href="index.html"><img src="img/logo.png" alt="MultiShop"></a>
+      <a href="index.html"><img src="resources/webimage/logo.png" alt="logoimage"></a>
    </p>
-   <!--
-      No Space
-      
-      -->
+   
    <div class="h-shop">
       <form method="get" action="#" class="h-search" id="h-search">
          <input type="text" placeholder="Search...">
@@ -19,23 +18,13 @@
             <span>5</span>
             </a>
          </li>
-         <li class="h-shop-icon h-compare">
+         <!-- <li class="h-shop-icon h-compare">
             <a title="Compare List" href="compare.html">
             <i class="ion-arrow-swap"></i>
             <span>2</span>
             </a>
-         </li>
-         <li class="h-shop-icon h-profile">
-            <a href="auth.html" title="My Account">
-            <i class="ion-android-person"></i>
-            </a>
-            <ul class="h-profile-links">
-               <li><a href="auth.html">Login / Registration</a></li>
-               <li><a href="cart.html">Cart</a></li>
-               <li><a href="compare.html">Compare</a></li>
-               <li><a href="wishlist.html">Wishlist</a></li>
-            </ul>
-         </li>
+         </li> -->
+         
          <li class="h-cart">
             <a class="cart-contents" href="cart.html">
                <p class="h-cart-icon">
@@ -79,6 +68,17 @@
                   </p>
                </div>
             </div>
+         </li>
+         <li class="h-shop-icon h-profile">
+            <a href="auth.html" title="My Account">
+            <i class="ion-android-person"></i>
+            </a>
+            <ul class="h-profile-links">
+               <li><a href="/login">Login / Registration</a></li>
+               <li><a href="cart.html">Cart</a></li>
+               <li><a href="wishlist.html">Wishlist</a></li>
+               <!-- <li><a href="compare.html">Compare</a></li> -->
+            </ul>
          </li>
          <li class="h-menu-btn" id="h-menu-btn">
             <i class="ion-navicon"></i> Menu

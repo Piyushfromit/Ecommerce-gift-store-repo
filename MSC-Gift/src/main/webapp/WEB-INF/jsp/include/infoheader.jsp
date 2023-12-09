@@ -1,3 +1,4 @@
+
 <div class="container-fluid page-styling site-header-before">
    <div class="row">
       <div class="col-lg-4">
@@ -9,20 +10,20 @@
                   </a>
                </p>
             </li>
-            <li>
+            <!-- <li>
                <p class="links_list-value">
                   <a href="#" rel="nofollow">
                   <i class="fa fa-paper-plane"></i>
                   </a>
                </p>
-            </li>
-            <li>
+            </li> -->
+           <!--  <li>
                <p class="links_list-value">
                   <a href="#" rel="nofollow">
                   <i class="fa fa-pinterest-p"></i>
                   </a>
                </p>
-            </li>
+            </li> -->
             <li>
                <p class="links_list-value">
                   <a href="#" rel="nofollow">
@@ -30,20 +31,20 @@
                   </a>
                </p>
             </li>
-            <li>
+            <!-- <li>
                <p class="links_list-value">
                   <a href="#" rel="nofollow">
                   <i class="fa fa-twitter"></i>
                   </a>
                </p>
-            </li>
-            <li>
+            </li> -->
+            <!-- <li>
                <p class="links_list-value">
                   <a href="#" rel="nofollow">
                   <i class="fa fa-google-plus"></i>
                   </a>
                </p>
-            </li>
+            </li> -->
             <li>
                <p class="links_list-value">
                   <a href="#" rel="nofollow">
