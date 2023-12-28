@@ -33,63 +33,111 @@
          
          
          
-         <div id="content" class="site-content">
-            <div id="primary" class="content-area width-normal">
-               <main id="main" class="site-main">
-                  <div class="cont maincont">
-                      <ul class="b-crumbs">
-                        <li><a href="/">Home</a></li>
-                        <li>Login</li>
-                     </ul>
-                     <article class="page-cont">
-                        <div class="page-styling">
-                           <div class="auth-wrap">
-                              <div class="auth-col">
-                                 <h2>Login</h2>
-                                 <form method="post" class="login">
-                                    <p>
-                                       <label for="username">E-mail <span class="required">*</span></label>
-                                       <input type="text" id="username">
-                                    </p>
-                                    <p>
-                                       <label for="password">Password <span class="required">*</span></label>
-                                       <input type="password" id="password">
-                                    </p>
-                                    <p class="auth-submit">
-                                       <input type="submit" value="Login">
-                                       <input type="checkbox" id="rememberme" value="forever">
-                                       <label for="rememberme">Remember me</label>
-                                    </p>
-                                    <p class="auth-lost_password">
-                                       <a href="#">Lost your password?</a>
-                                    </p>
-                                 </form>
-                              </div>
-                              <!-- <div class="auth-col">
-                                 <h2>Register</h2>
-                                 <form method="post" class="register">
-                                    <p>
-                                       <label for="reg_email">Email <span class="required">*</span></label>
-                                       <input type="email" id="reg_email">
-                                    </p>
-                                    <p>
-                                       <label for="reg_password">Password <span class="required">*</span></label>
-                                       <input type="password" id="reg_password">
-                                    </p>
-                                    <p class="auth-submit">
-                                       <input type="submit" value="Register">
-                                    </p>
-                                 </form>
-                              </div> -->
-                           </div>
-                        </div>
-                     </article>
-                  </div>
-               </main>
-               <!-- #main -->
+<div id="content" class="site-content">
+    <div id="primary" class="content-area width-normal">
+    <main id="main" class="site-main">
+    <div class="cont maincont">
+    <h1 class="maincont-ttl">Registration / Login</h1>
+    <ul class="b-crumbs">
+    <li><a href="index.html">Home</a></li>
+    <li>Registration & Login</li>
+    </ul><article class="page-cont">
+   <div class="page-styling">
+        
+
+<div class="auth-wrap">
+
+
+
+    <div class="auth-col">
+        <h2>Login</h2>
+        <form th:action="/login" method="post" class="login">
+            <p>
+                <label for="username">E-mail <span class="required">*</span></label>
+                <input type="text" name="username" id="username">
+            </p>
+            <p>
+                <label for="password">Password <span class="required">*</span></label>
+                <input type="password" name="password" id="password">
+            </p>
+            <p class="auth-submit">
+                <input type="submit" value="Login">
+                <input type="checkbox" id="rememberme" value="forever">
+                <label for="rememberme">Remember me</label>
+            </p>
+            <p class="auth-lost_password">
+                <a href="#">Lost your password?</a>
+            </p>
+        </form>
+        
+    </div>
+    
+    
+    
+    <div class="auth-col">
+        <h2>Register</h2>
+        <form action="/register"  method="post" class="register">
+            <p>
+                <label for="name">Name <span class="required">*</span></label>
+                <input type="text" id="reg_email"  name="name"  >
+            </p>
+            <p>
+                <label for="phone">Phone <span class="required">*</span></label>
+                <input type="tel" id="reg_password" name="phone" >
+            </p>
+            <p>
+                <label for="email">Email <span class="required">*</span></label>
+                <input type="email" id="email" name="email"   >
+            </p>
+             <p>
+                <label for="password">Password <span class="required">*</span></label>
+                <input type="password" id="password" name="password"   >
+            </p>
+            <p class="auth-submit">
+                <input type="submit" value="Register">
+            </p>
+        </form>
+    </div>
+  
+  
+  
+        <!-- <form action="/register" method="POST">
+            <div class="form-group">
+                <input type="text" id="name" name="name" placeholder="Name" required>
             </div>
-            <!-- #primary -->    
-         </div>
+            <div class="form-group">
+                <input type="tel" id="phone" name="phone" placeholder="Phone Number" required>
+            </div>
+            <div class="form-group">
+                <input type="email" id="email" name="email" placeholder="Email Address:" required>
+            </div>
+            <div class="form-group">
+                <input type="password" id="password" name="password" placeholder="Password" required>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Register">
+            </div>
+        </form> -->
+  
+  
+  
+  
+  
+    
+    
+</div>
+
+
+</div>
+</article>
+</div>
+
+
+ </main><!-- #main -->
+</div><!-- #primary -->   
+ </div><!-- #content -->
+          
+          
          <!-- #content -->
          <div class="container-fluid blog-sb-widgets page-styling site-footer">
             <div class="row">

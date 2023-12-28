@@ -39,7 +39,7 @@ public class LoginRegisterController {
 	@GetMapping("/register")
 	public String getRegisterUser() {
 		
-		return "register";
+		return "login";
 		
 	}
 	
@@ -86,7 +86,9 @@ public class LoginRegisterController {
          
          System.out.println("Developer Sent OTP: " + otpSentByCode);
          
-         return "login";   // redirect:/home
+         
+         return "redirect:/login";
+        // return "login";   // redirect:/home
     }
 
 

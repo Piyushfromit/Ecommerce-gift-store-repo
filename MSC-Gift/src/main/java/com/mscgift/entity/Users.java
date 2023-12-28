@@ -14,7 +14,7 @@ public class Users {
 	private Integer id;
 	@Column(length = 100, name ="name")
 	private String name;
-	@Column(length = 12, name ="phone")
+	@Column(length = 15, name ="phone")
 	private String phone;
 	private String email;
 	private String password;
