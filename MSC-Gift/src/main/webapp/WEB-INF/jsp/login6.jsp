@@ -12,8 +12,7 @@
 </head>
 <body>
 
-  <jsp:include page="include/indexheader.jsp" />
-
+  
 
 
   <div class="regform">

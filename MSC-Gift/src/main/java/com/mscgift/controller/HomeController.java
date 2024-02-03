@@ -13,13 +13,27 @@ public class HomeController {
 	
 	
 	@GetMapping("/")
-	public String HomePage() {
+	public String homePage() {
 		System.out.println("Returned to home page ");
 		return "index";
 		
 	}
 	
 	
+	@GetMapping("/about-us")
+	public String aboutUs() {
+		System.out.println("Returned to home page ");
+		return "about-us";
+		
+	}
 	
+	
+	
+	@GetMapping("/contacts_us")
+	public String contacts_us() {
+		System.out.println("Returned to home page ");
+		return "contact-us";
+		
+	}
 
 }

@@ -12,6 +12,7 @@
 <title>Insert title here</title>
 <jsp:include page="../component/common.jsp" />
 
+
 <style type="text/css">
 .custom-bg{
 	background: #2196F3!important;
@@ -22,8 +23,8 @@
 </head>
 
 <body>
-
 <jsp:include page="../component/navbar.jsp" />
+<jsp:include page="../component/sidebar.jsp" />
 
 <div class="container pt-5">
 
@@ -50,6 +51,6 @@
 
 </div>
 
-
+<jsp:include page="../component/commonjs.jsp" />
 </body>
 </html>

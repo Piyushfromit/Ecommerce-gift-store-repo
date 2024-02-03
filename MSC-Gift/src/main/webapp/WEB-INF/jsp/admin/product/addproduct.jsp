@@ -10,10 +10,10 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <jsp:include page="../component/common.jsp" />
-<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
 </head>
 <body>
 <jsp:include page="../component/navbar.jsp" />
+<jsp:include page="../component/sidebar.jsp" />
 
 <!-- start Add Product -->
    <div class="container pt-5">
@@ -113,6 +113,6 @@
 <!-- End Add Category   -->
 
 
-
+<jsp:include page="../component/commonjs.jsp" />
 </body>
 </html>

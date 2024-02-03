@@ -1,0 +1,23 @@
+@charset "UTF-8";
+
+
+
+.custom-bg{
+	background: #2196F3!important;
+}
+
+.admin .card{
+	border:1px solid #2196F3;
+}
+
+.admin .card:hover{
+	background:  #2196F3;
+	cursor: pointer;
+	
+}
+
+
+.offcanvas.offcanvas-start{
+	top: 56px;
+	width: 200px;
+}

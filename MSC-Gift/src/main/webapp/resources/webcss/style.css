@@ -2279,7 +2279,7 @@ body .widget_search .dgwt-wcas-si img {
 	position: relative;
 	margin-top: -25px;
 	margin-bottom: 50px;
-	padding-top: 120px;
+	padding-top: 111px;
 	padding-bottom: 170px;
 	text-align: center;
 	background-repeat: no-repeat;
@@ -2330,6 +2330,7 @@ body .widget_search .dgwt-wcas-si img {
 	padding: 0;
 	position: relative;
 	z-index: 1;
+	-webkit-text-stroke: 1px #2bb656;
 }
 .heroblock a.btn {
 	font-size: 15px;

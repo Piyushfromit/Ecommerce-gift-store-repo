@@ -12,8 +12,7 @@
 </head>
 <body>
 <!--  -->
- <jsp:include page="include/indexheader.jsp" />
-
+ 
 
 
     <h1>Welcome to User Home Page</h1>

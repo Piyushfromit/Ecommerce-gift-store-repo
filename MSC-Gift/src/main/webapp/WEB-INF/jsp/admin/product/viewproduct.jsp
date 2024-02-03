@@ -16,7 +16,7 @@
 <body>
 
 <jsp:include page="../component/navbar.jsp" />
-
+<jsp:include page="../component/sidebar.jsp" />
 
 <!-- View Product Table Start-->
 
@@ -89,6 +89,6 @@
 <!-- View Product Table end -->
 
 
-
+<jsp:include page="../component/commonjs.jsp" />
 </body>
 </html>

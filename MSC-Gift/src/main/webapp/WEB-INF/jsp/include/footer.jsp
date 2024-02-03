@@ -11,16 +11,16 @@
          <h3 class="widgettitle">Company</h3>
          <ul class="menu">
             <li>
-               <a href="index.html">Front Page</a>
+               <a href="/">Front Page</a>
             </li>
             <li>
-               <a href="about.html">About Us</a>
+               <a href="/about-us">About Us</a>
             </li>
             <li>
-               <a href="contacts.html">Contacts</a>
+               <a href="/contacts_us">Contacts</a>
             </li>
             <li>
-               <a href="index.html">Gallery</a>
+               <a href="/">Gallery</a>
             </li>
          </ul>
       </div>
@@ -76,4 +76,16 @@
          </ul>
       </div>
    </div>
+</div>
+
+
+
+<div class="form-validate modal-form" id="modal-form">
+   <form action="#" method="POST" class="form-validate">
+      <h4>Contact Us</h4>
+      <input type="text" placeholder="Your name" data-required="text" name="name">
+      <input type="text" placeholder="Your phone" data-required="text" name="phone">
+      <input type="text" placeholder="Your email" data-required="text" data-required-email="email" name="email">
+      <input class="btn1" type="submit" value="Send">
+   </form>
 </div>

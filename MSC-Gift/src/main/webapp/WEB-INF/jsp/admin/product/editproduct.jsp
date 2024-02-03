@@ -24,6 +24,7 @@
 <body>
 
 <jsp:include page="../component/navbar.jsp" />
+<jsp:include page="../component/sidebar.jsp" />
 
 <div class="container pt-5">
 
@@ -123,6 +124,6 @@
 
 </div>
 
-
+<jsp:include page="../component/commonjs.jsp" />
 </body>
 </html>

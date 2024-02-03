@@ -18,6 +18,7 @@
 <body>
 
 <jsp:include page="../component/navbar.jsp" />
+<jsp:include page="../component/sidebar.jsp" />
 
 
 <!-- View Category Table Start-->
@@ -125,6 +126,7 @@
 <!-- End Edit Category Model  -->
 
 
+<jsp:include page="../component/commonjs.jsp" />
 
 </body>
 </html>

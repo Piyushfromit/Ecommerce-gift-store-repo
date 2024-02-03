@@ -70,7 +70,7 @@
             </div>
          </li>
          <li class="h-shop-icon h-profile">
-            <a href="auth.html" title="My Account">
+            <a href="/login" title="My Account">
             <i class="ion-android-person"></i>
             </a>
             <ul class="h-profile-links">

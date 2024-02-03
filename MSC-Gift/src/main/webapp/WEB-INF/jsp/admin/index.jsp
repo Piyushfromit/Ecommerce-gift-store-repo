@@ -17,7 +17,6 @@
 
 
  
-
-
+<jsp:include page="../admin/component/commonjs.jsp" />
 </body>
 </html>
