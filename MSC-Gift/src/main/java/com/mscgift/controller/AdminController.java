@@ -146,8 +146,8 @@ public class AdminController {
 		model.addAttribute("id", id);
 		List<Category> allActiveCategory = categoryService.getAllActiveCategory() ;
 		model.addAttribute("allActiveCategory", allActiveCategory);
-		Optional<Product> prodict = productRepository.findById(id);
-		model.addAttribute("command",prodict.get());
+		Optional<Product> product = productRepository.findById(id);
+		model.addAttribute("command",product.get());
 		return "admin/product/editproduct";
 	}
 
