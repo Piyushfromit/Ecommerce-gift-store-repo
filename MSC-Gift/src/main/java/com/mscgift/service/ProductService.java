@@ -12,6 +12,8 @@ public interface ProductService {
 	
 	public Product saveProduct( Product product, MultipartFile[] imageFiles)throws IOException;
 	
+	public Product updateProduct( Product product, MultipartFile[] imageFiles)throws IOException;
+	
 	public List<Product> getAllProduct();
 	
 	

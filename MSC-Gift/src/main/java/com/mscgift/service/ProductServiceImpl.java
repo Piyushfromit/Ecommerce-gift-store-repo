@@ -30,17 +30,56 @@ public class ProductServiceImpl implements ProductService {
 	        
 		List<String> imageNames = saveImages(imageFiles);
 
-        // Update the product entity with the image file names
-        product.setImageOne(imageNames.get(0));
-        product.setImageTwo(imageNames.get(1));
-        product.setImageThree(imageNames.get(2));
-        product.setImageFour(imageNames.get(3));
-
+		for(int i=0; i<imageNames.size(); i++) {
+			if(i==0) {
+				product.setImageOne(imageNames.get(0));
+			}
+			if(i==1) {
+				product.setImageOne(imageNames.get(1));
+			}
+			if(i==2) {
+				product.setImageOne(imageNames.get(2));
+			}
+			if(i==3) {
+				product.setImageOne(imageNames.get(3));
+			}
+		}
+        
         // Save the product to the database
         Product savedProduct = productRepository.save(product);
 
         return savedProduct;
 	}
+	
+	
+	@Override
+	public Product updateProduct(Product product, MultipartFile[] imageFiles) throws IOException {
+	        
+		List<String> imageNames = saveImages(imageFiles);
+
+		for(int i=0; i<imageNames.size(); i++) {
+			if(i==0) {
+				product.setImageOne(imageNames.get(0));
+			}
+			if(i==1) {
+				product.setImageOne(imageNames.get(1));
+			}
+			if(i==2) {
+				product.setImageOne(imageNames.get(2));
+			}
+			if(i==3) {
+				product.setImageOne(imageNames.get(3));
+			}
+		}
+        
+        // Save the product to the database
+        Product savedProduct = productRepository.save(product);
+
+        return savedProduct;
+	}
+	
+	
+	
 	
 	private List<String> saveImages(MultipartFile[] imageFiles) throws IOException {
 	    

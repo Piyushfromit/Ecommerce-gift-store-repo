@@ -28,8 +28,8 @@
 
 	<div class="container pt-5">
 
-		<form:form id="editCategoryForm" action="/admin/editproduct/${id}"
-			method="post" enctype="multipart/form-data">
+		<form:form  action="/admin/editproduct/${id}" method="post" 
+		    enctype="multipart/form-data">
 
 			<!-- Product Name -->
 			<div class="form-group">

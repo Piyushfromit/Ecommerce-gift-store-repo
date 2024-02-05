@@ -83,7 +83,7 @@
 				</div>
 				<div class="modal-body">
 
-					<form id="editCategoryForm" action="/admin/updatecategory"
+					<form action="/admin/updatecategory"
 						method="post">
 						<div class="form-group" style="display: none;">
 							<label for="id">Enter Category Id:</label> <input type="text"

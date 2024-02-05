@@ -28,7 +28,7 @@
 
 	<div class="container pt-5">
 
-		<form:form id="editCategoryForm" action="/admin/editcategory/${id}"
+		<form:form action="/admin/editcategory/${id}"
 			method="post" enctype="multipart/form-data">
 
 			<div class="form-group">
