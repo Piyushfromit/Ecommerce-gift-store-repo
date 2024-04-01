@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="jakarta.tags.core"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 
@@ -25,14 +24,13 @@
 	<!-- View Category Table Start-->
 
 	<div class="container mt-3">
-		<h2>Category List</h2>
+		<h2>All Admin</h2>
 		<table id="example" class="display" style="width: 100%">
 			<thead>
 				<tr>
 					<th>ID</th>
 					<th>Name</th>
 					<th>Mail Id</th>
-					<th>Password</th>
 					<th>Phone</th>
 					<th>Role</th>
 					<th>Status</th>
@@ -46,7 +44,6 @@
 						<td>${allusers.id}</td>
 						<td>${allusers.name}</td>
 						<td>${allusers.email}</td>
-						<td>${allusers.password}</td>
 						<td>${allusers.phone}</td>
 						<td>${allusers.roles}</td>
 						<td>${allusers.isEnabled ? 'Active' : 'Inactive'}</td>

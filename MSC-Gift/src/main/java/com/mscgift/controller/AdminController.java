@@ -1,23 +1,19 @@
 package com.mscgift.controller;
 
 import java.io.IOException;
-import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.mscgift.entity.Category;
@@ -25,6 +21,7 @@ import com.mscgift.entity.Product;
 import com.mscgift.entity.Users;
 import com.mscgift.repository.CategoryRepository;
 import com.mscgift.repository.ProductRepository;
+import com.mscgift.repository.UsersRepository;
 import com.mscgift.service.CategoryService;
 import com.mscgift.service.ProductService;
 import com.mscgift.service.UsersService;
@@ -37,6 +34,9 @@ public class AdminController {
 
 	@Autowired
 	public UsersService usersService;
+	
+	@Autowired
+	public UsersRepository usersRepository;
 
 	@Autowired
 	public CategoryService categoryService;
@@ -162,6 +162,21 @@ public class AdminController {
 		return "redirect:/admin/viewproduct";
 	}
 
+	
+	@GetMapping("/viewalladmin")
+	public String getAllAdmin(final HttpSession session, final Model model) {
+		
+		System.out.println("******************************************************************");
+		
+		List<Users> users = usersRepository.findByRoles("ROLE_USER");
+		if (users.size()>0) {
+			model.addAttribute("alluserList", users);
+		}
+		return "admin/usersadmin/viewuseradmin";
+	}
+	
+	
+	
 	@GetMapping("/allusers")
 	public String getAllUsers(final HttpSession session, final Model model) {
 		List<Users> users = usersService.findAllUsers();

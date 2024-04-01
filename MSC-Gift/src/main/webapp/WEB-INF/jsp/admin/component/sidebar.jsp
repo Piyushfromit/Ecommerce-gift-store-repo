@@ -3,7 +3,7 @@
 
 
 <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas"
-	data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">SideBar</button>
+	data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling" id="sideBar"><img src="/resources/admin/images/sidbardir.png" alt="side-bar" /></button>
 
 
 
@@ -21,7 +21,7 @@
 		<ul
 			class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-start"
 			id="menu">
-			<li><a href="#" class="nav-link text-truncate"> <i
+			<li><a href="/admin/viewalladmin" class="nav-link text-truncate"> <i
 					class="fs-5 bi-house"></i><span class="ms-1 d-none d-sm-inline">Admin</span>
 			</a></li>
 			<li><a href="#" class="nav-link text-truncate"> <i
