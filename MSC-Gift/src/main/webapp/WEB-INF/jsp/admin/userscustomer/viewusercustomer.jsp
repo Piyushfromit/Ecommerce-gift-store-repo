@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="jakarta.tags.core"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 
@@ -25,29 +24,29 @@
 	<!-- View Category Table Start-->
 
 	<div class="container mt-3">
-		<h2>Category List</h2>
+		<h2>All Admin</h2>
 		<table id="example" class="display" style="width: 100%">
 			<thead>
 				<tr>
 					<th>ID</th>
-					<th>Category Name</th>
+					<th>Name</th>
+					<th>Mail Id</th>
+					<th>Phone</th>
+					<th>Role</th>
 					<th>Status</th>
-					<th>Edit</th>
-					<th>Delete</th>
-					
 				</tr>
 			</thead>
 			<tbody>
-				<c:forEach items="${allCategoryList}" var="category"
+				<c:forEach items="${alluserList}" var="allusers"
 					varStatus="loop">
 
 					<tr>
-						<td>${category.id}</td>
-						<td>${category.categoryname}</td>
-						<td>${category.isEnabled ? 'Active' : 'Inactive'}</td>
-						<td><a href="/admin/editcategory/${category.id}"><button>Edit</button></a></td>
-						<td><a href="/admin/deletecategory/${category.id}"><button>Del</button></a></td>
-						
+						<td>${allusers.id}</td>
+						<td>${allusers.name}</td>
+						<td>${allusers.email}</td>
+						<td>${allusers.phone}</td>
+						<td>${allusers.roles}</td>
+						<td>${allusers.isEnabled ? 'Active' : 'Inactive'}</td>
 					</tr>
 				</c:forEach>
 			</tbody>

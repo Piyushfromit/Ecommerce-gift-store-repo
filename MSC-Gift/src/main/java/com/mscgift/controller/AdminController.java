@@ -161,32 +161,28 @@ public class AdminController {
 		}
 		return "redirect:/admin/viewproduct";
 	}
-
 	
 	@GetMapping("/viewalladmin")
 	public String getAllAdmin(final HttpSession session, final Model model) {
 		
-		System.out.println("******************************************************************");
-		
-		List<Users> users = usersRepository.findByRoles("ROLE_USER");
+		List<Users> users = usersRepository.findByRoles("ROLE_ADMIN");
 		if (users.size()>0) {
 			model.addAttribute("alluserList", users);
 		}
 		return "admin/usersadmin/viewuseradmin";
 	}
 	
-	
-	
-	@GetMapping("/allusers")
-	public String getAllUsers(final HttpSession session, final Model model) {
-		List<Users> users = usersService.findAllUsers();
-		model.addAttribute("userList", users);
-		for (Iterator iterator = users.iterator(); iterator.hasNext();) {
-			Users users2 = (Users) iterator.next();
-			System.out.println(users2.getName());
-
+	@GetMapping("/viewallcustomer")
+	public String getAllCustomer(final HttpSession session, final Model model) {
+		
+		List<Users> users = usersRepository.findByRoles("ROLE_USER");
+		if (users.size()>0) {
+			model.addAttribute("alluserList", users);
 		}
-		return "admin/all-users";
+		return "admin/userscustomer/viewusercustomer";
 	}
+	
+	
+	
 
 }

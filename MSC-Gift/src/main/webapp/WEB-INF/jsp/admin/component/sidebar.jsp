@@ -24,7 +24,7 @@
 			<li><a href="/admin/viewalladmin" class="nav-link text-truncate"> <i
 					class="fs-5 bi-house"></i><span class="ms-1 d-none d-sm-inline">Admin</span>
 			</a></li>
-			<li><a href="#" class="nav-link text-truncate"> <i
+			<li><a href="/admin/viewallcustomer" class="nav-link text-truncate"> <i
 					class="fs-5 bi-house"></i><span class="ms-1 d-none d-sm-inline">User</span>
 			</a></li>
 			<li><a href="/admin/viewcategory"
