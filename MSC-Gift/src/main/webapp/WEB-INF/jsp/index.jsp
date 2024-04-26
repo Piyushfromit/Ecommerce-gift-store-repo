@@ -7,43 +7,43 @@
    <jsp:include page="include/commonup.jsp" />
 </head>
 <body>
-     
+
 <div id="page" class="site">
-		
+
 		<jsp:include page="include/infoheader.jsp" />
-		
+
 		<jsp:include page="include/header.jsp" />
-		
+
 		<div id="content" class="site-content">
-		
+
 			<div id="primary" class="content-area width-full">
-			   
+
 			   <main id="main" class="site-main">
-			
+
 			      <div class="maincont page-styling page-full">
-			
+
 						<div class="heroblock" style="background-image: url(resources/webimage/1/front/msccover4.png);">
 						    <p class="heroblock-subttl"><a href="catalog-gallery.html">Store</a></p>
 						    <h3 class="heroblock-ttl">Free Shipping Anywhere</h3>
 						    <a href="catalog-gallery.html" class="btn">Read More</a>
 						</div>
-			
-			
+
+
 			            <jsp:include page="include/homesectionone.jsp" />
-			
-			
+
+
 			            <jsp:include page="include/homesectiontwo.jsp" />
-			
+
 			     </div><!-- .maincont.page-styling.page-full -->
-			     
+
 			   </main><!-- #main -->
-			   
-			</div><!-- #primary -->    
-		
+
+			</div><!-- #primary -->
+
 		</div><!-- #content -->
-		
-		
-		
+
+
+
  <jsp:include page="include/footer.jsp" />
 
 
@@ -53,7 +53,7 @@
 
 
 
-<!-- 
+<!--
 
 <div class="modal-form" id="modal-form-psd">
    <form action="#" method="POST" class="form-validate">
@@ -151,21 +151,21 @@
 <jsp:include page="include/side-tfn.jsp" />
 
 
-<!-- Yandex.Metrika counter --> 
-<!-- <script type="text/javascript" > 
+<!-- Yandex.Metrika counter -->
+<!-- <script type="text/javascript" >
 (function (d, w, c) { (w[c] = w[c] || []).push(function() {
-	try { 
-		w.yaCounter46016169 = new Ya.Metrika({ id:46016169, clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true }); 
-	} catch(e) { 
-		
-	} }); 
+	try {
+		w.yaCounter46016169 = new Ya.Metrika({ id:46016169, clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true });
+	} catch(e) {
+
+	} });
 	var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () {
-		n.parentNode.insertBefore(s, n); }; 
-		s.type = "text/javascript"; s.async = true; s.src = "../../../mc.yandex.ru/metrika/watch.js"; 
-		if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); 
-		} else { 
+		n.parentNode.insertBefore(s, n); };
+		s.type = "text/javascript"; s.async = true; s.src = "../../../mc.yandex.ru/metrika/watch.js";
+		if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false);
+		} else {
 		f(); } })(document, window, "yandex_metrika_callbacks");
-</script> 
+</script>
 
 
 <noscript>
