@@ -7,7 +7,7 @@ pageEncoding="UTF-8"%>
 <head>
 	<meta charset="utf-8">
 	<meta content="width=device-width, initial-scale=1.0" name="viewport">
-	<title>Pages / Login - NiceAdmin Bootstrap Template</title>
+	<title>View Product AdminStore</title>
 	<meta content="" name="description">
 	<meta content="" name="keywords">
 	<jsp:include page="../include/commonup.jsp" />
