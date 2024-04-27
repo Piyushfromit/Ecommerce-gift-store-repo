@@ -39,7 +39,7 @@ public class LoginRegisterController {
 	@GetMapping("/register")
 	public String getRegisterUser() {
 		
-		return "login";
+		return "register";
 		
 	}
 	

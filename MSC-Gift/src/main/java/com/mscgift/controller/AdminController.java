@@ -59,12 +59,12 @@ public class AdminController {
 	public String viewAllCategory(final HttpSession session, final Model model) {
 		List<Category> allCategory = categoryService.getAllCategory();
 		model.addAttribute("allCategoryList", allCategory);
-		return "admin/category/viewcategory";
+		return "category/viewcategory";
 	}
 
 	@GetMapping("/addcategory")
 	public String addCategory(final HttpSession session, final Model model) {
-		return "admin/category/addcategory";
+		return "category/addcategory";
 	}
 
 	@PostMapping("/addcategory")
@@ -79,7 +79,7 @@ public class AdminController {
 		model.addAttribute("id", id);
 		Optional<Category> category = categoryRepository.findById(id);
 		model.addAttribute("command", category.get());
-		return "admin/category/editcategory";
+		return "category/editcategory";
 	}
 
 	@PostMapping("/editcategory/{id}")
@@ -108,7 +108,7 @@ public class AdminController {
 	public String viewAllProduct(final HttpSession session, final Model model) {
 		List<Product> allProduct = productService.getAllProduct();
 		model.addAttribute("allProductList", allProduct);
-		return "admin/product/viewproduct";
+		return "product/viewproduct";
 
 	}
 
@@ -116,7 +116,7 @@ public class AdminController {
 	public String getMapingAddProduct(final HttpSession session, final Model model) {
 		List<Category> allActiveCategory = categoryService.getAllActiveCategory();
 		model.addAttribute("allActiveCategory", allActiveCategory);
-		return "admin/product/addproduct";
+		return "product/addproduct";
 	}
 
 	@PostMapping("/addproduct")
@@ -141,7 +141,7 @@ public class AdminController {
 		model.addAttribute("allActiveCategory", allActiveCategory);
 		Optional<Product> product = productRepository.findById(id);
 		model.addAttribute("command", product.get());
-		return "admin/product/editproduct";
+		return "product/editproduct";
 	}
 
 	@PostMapping("/editproduct/{id}")
@@ -161,7 +161,19 @@ public class AdminController {
 		}
 		return "redirect:/admin/viewproduct";
 	}
-	
+
+	@GetMapping("/deleteproduct/{id}")
+	public String deleteProduct(@PathVariable int id) {
+		Optional<Product> product = productRepository.findById(id); // Implement
+//		if (product.isPresent()) {
+//			productRepository.deleteById(id);
+//		}
+		System.out.println("Product Deleted");
+		return "redirect:/admin/viewproduct";
+	}
+
+
+
 	@GetMapping("/viewalladmin")
 	public String getAllAdmin(final HttpSession session, final Model model) {
 		
@@ -169,7 +181,7 @@ public class AdminController {
 		if (users.size()>0) {
 			model.addAttribute("alluserList", users);
 		}
-		return "admin/usersadmin/viewuseradmin";
+		return "alladmin/viewadmin";
 	}
 	
 	@GetMapping("/viewallcustomer")
@@ -179,7 +191,7 @@ public class AdminController {
 		if (users.size()>0) {
 			model.addAttribute("alluserList", users);
 		}
-		return "admin/userscustomer/viewusercustomer";
+		return "allcustomer/viewcustomer";
 	}
 	
 	

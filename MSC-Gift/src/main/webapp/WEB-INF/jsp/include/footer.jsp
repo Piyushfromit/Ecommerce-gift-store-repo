@@ -1,3 +1,30 @@
+<footer id="footer" class="footer">
+   <div class="copyright">
+      &copy; Copyright <strong><span>NiceAdmin</span></strong>. All Rights Reserved
+   </div>
+   <div class="credits">
+       Designed by <a href="#">BootstrapMade</a>
+   </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
 <div class="container-fluid blog-sb-widgets page-styling site-footer">
    <div class="row">
       <div class="col-sm-12 col-md-4 widget align-center-tablet f-logo-wrap">
@@ -88,4 +115,4 @@
       <input type="text" placeholder="Your email" data-required="text" data-required-email="email" name="email">
       <input class="btn1" type="submit" value="Send">
    </form>
-</div>
+</div>-->
