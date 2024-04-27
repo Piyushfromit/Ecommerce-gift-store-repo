@@ -1,7 +1,6 @@
-
 <aside id="sidebar" class="sidebar">
-
     <ul class="sidebar-nav" id="sidebar-nav">
+        <li class="nav-heading">Business</li>
         <!-- Dashboard -->
         <li class="nav-item">
             <a class="nav-link collapsed" href="#">
@@ -17,7 +16,7 @@
             <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
                 <li>
                     <a href="/admin/viewallcustomer">
-                        <i class="bi bi-circle"></i><span>Users</span>
+                        <i class="bi bi-circle"></i><span>Customer</span>
                     </a>
                 </li>
                 <li>
@@ -61,7 +60,6 @@
                         <i class="bi bi-circle"></i><span>Product</span>
                     </a>
                 </li>
-
             </ul>
         </li>
         <!-- Order Status -->
@@ -72,57 +70,91 @@
             <ul id="charts-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
                 <li>
                     <a href="#">
-                        <i class="bi bi-circle"></i><span>Chart.js</span>
+                        <i class="bi bi-circle"></i><span>New Order</span>
                     </a>
                 </li>
                 <li>
                     <a href="#">
-                        <i class="bi bi-circle"></i><span>ApexCharts</span>
+                        <i class="bi bi-circle"></i><span>Order Preparing</span>
                     </a>
                 </li>
                 <li>
                     <a href="#">
-                        <i class="bi bi-circle"></i><span>ECharts</span>
+                        <i class="bi bi-circle"></i><span>Order Prepared</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="bi bi-circle"></i><span>Order Dispatched</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="bi bi-circle"></i><span>Order Delivered</span>
                     </a>
                 </li>
             </ul>
         </li>
 
         <li class="nav-heading">Pages</li>
-
+        <!-- About Us, Contact Us, T & C, P % P -->
         <li class="nav-item">
-            <a class="nav-link collapsed" href="#">
+            <a class="nav-link collapsed" data-bs-target="#about-nav" data-bs-toggle="collapse" href="#">
+                <i class="bi bi-question-circle"></i>
+                <span>About us</span><i class="bi bi-chevron-down ms-auto"></i>
+            </a>
+            <ul id="about-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                <li>
+                    <a href="#">
+                        <i class="bi bi-circle"></i><span>About us</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="bi bi-circle"></i><span>Contact us</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="bi bi-circle"></i><span>Terms Conditions</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="bi bi-circle"></i><span>Privacy Policy</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <!-- My Profile, Profile Setting, Login, Logout -->
+        <li class="nav-item">
+            <a class="nav-link collapsed" data-bs-target="#profile-nav" data-bs-toggle="collapse" href="#">
                 <i class="bi bi-person"></i>
-                <span>Profile</span>
+                <span>Profile</span><i class="bi bi-chevron-down ms-auto"></i>
             </a>
-        </li><!-- End Profile Page Nav -->
-
-
-
-        <li class="nav-item">
-            <a class="nav-link collapsed" href="#">
-                <i class="bi bi-envelope"></i>
-                <span>Contact</span>
-            </a>
-        </li><!-- End Contact Page Nav -->
-
-        <li class="nav-item">
-            <a class="nav-link collapsed" href="#">
-                <i class="bi bi-card-list"></i>
-                <span>Register</span>
-            </a>
-        </li><!-- End Register Page Nav -->
-
-        <li class="nav-item">
-            <a class="nav-link collapsed" href="#">
-                <i class="bi bi-box-arrow-in-right"></i>
-                <span>Login</span>
-            </a>
-        </li><!-- End Login Page Nav -->
-
-
-
+            <ul id="profile-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                <li>
+                    <a href="#">
+                        <i class="bi bi-person"></i><span>My Profile</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="bi bi-gear"></i><span>Setting</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="bi bi-box-arrow-in-right"></i><span>Log In</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="bi bi-box-arrow-right"></i><span>Log Out</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
 
     </ul>
-
 </aside>
