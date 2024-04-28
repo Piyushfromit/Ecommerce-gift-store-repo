@@ -55,7 +55,6 @@ pageEncoding="UTF-8"%>
 		</div>
 	</section>
 </main>
-<!-- End #main -->
 <!-- ======= Footer ======= -->
 <jsp:include page="../include/footer.jsp" />
 <!-- ======= Footer End======= -->

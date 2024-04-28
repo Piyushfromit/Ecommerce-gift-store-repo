@@ -3,7 +3,7 @@
       &copy; Copyright <strong><span>AdminStore</span></strong>. All Rights Reserved
    </div>
    <div class="credits">
-       Designed by <a href="#">Piyush</a>
+       Designed by <a href="#">AdminStore</a>
    </div>
 </footer>
 

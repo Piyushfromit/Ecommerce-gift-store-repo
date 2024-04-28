@@ -9,62 +9,72 @@ pageEncoding="UTF-8"%>
 	<meta content="" name="description">
 	<meta content="" name="keywords">
 	<jsp:include page="include/commonup.jsp" />
+	<!-- Animation CSS Only for home page -->
+	<link href="/resources/css/flowerAnimation.css" rel="stylesheet">
 </head>
 <body>
 <!-- ======= Header ======= -->
 <jsp:include page="include/header.jsp" />
 <!-- ======= Header Sidebar ======= -->
-
 <!-- ======= Sidebar ======= -->
 <jsp:include page="include/sidebar.jsp" />
 <!-- ======= End Sidebar ======= -->
-
-
 <main id="main" class="main">
-
-	<div class="pagetitle">
-		<h1>Blank Page</h1>
-		<nav>
-			<ol class="breadcrumb">
-				<li class="breadcrumb-item"><a href="index.html">Home</a></li>
-				<li class="breadcrumb-item">Pages</li>
-				<li class="breadcrumb-item active">Blank</li>
-			</ol>
-		</nav>
-	</div><!-- End Page Title -->
-
 	<section class="section">
 		<div class="row">
-			<div class="col-lg-6">
-
-				<div class="card">
-					<div class="card-body">
-						<h5 class="card-title">Example Card</h5>
-						<p>This is an examle page with no contrnt. You can use it as a starter for your custom pages.</p>
+			<!-- Animation -->
+			<div class="animation">
+				<div class="flower">
+					<div class="f-wrapper">
+						<div class="flower__line"></div>
+						<div class="f">
+							<div class="flower__leaf flower__leaf--1"></div>
+							<div class="flower__leaf flower__leaf--2"></div>
+							<div class="flower__leaf flower__leaf--3"></div>
+							<div class="flower__leaf flower__leaf--4"></div>
+							<div class="flower__leaf flower__leaf--5"></div>
+							<div class="flower__leaf flower__leaf--6"></div>
+							<div class="flower__leaf flower__leaf--7"></div>
+							<div class="flower__leaf flower__leaf--8 flower__fall-down--yellow"></div>
+						</div>
 					</div>
-				</div>
-
-			</div>
-
-			<div class="col-lg-6">
-
-				<div class="card">
-					<div class="card-body">
-						<h5 class="card-title">Example Card</h5>
-						<p>This is an examle page with no contrnt. You can use it as a starter for your custom pages.</p>
+					<div class="f-wrapper f-wrapper--2">
+						<div class="flower__line"></div>
+						<div class="f">
+							<div class="flower__leaf flower__leaf--1"></div>
+							<div class="flower__leaf flower__leaf--2"></div>
+							<div class="flower__leaf flower__leaf--3"></div>
+							<div class="flower__leaf flower__leaf--4"></div>
+							<div class="flower__leaf flower__leaf--5"></div>
+							<div class="flower__leaf flower__leaf--6"></div>
+							<div class="flower__leaf flower__leaf--7"></div>
+							<div class="flower__leaf flower__leaf--8 flower__fall-down--pink"></div>
+						</div>
 					</div>
+					<div class="f-wrapper f-wrapper--3">
+						<div class="flower__line"></div>
+						<div class="f">
+							<div class="flower__leaf flower__leaf--1"></div>
+							<div class="flower__leaf flower__leaf--2"></div>
+							<div class="flower__leaf flower__leaf--3"></div>
+							<div class="flower__leaf flower__leaf--4"></div>
+							<div class="flower__leaf flower__leaf--5"></div>
+							<div class="flower__leaf flower__leaf--6"></div>
+							<div class="flower__leaf flower__leaf--7"></div>
+							<div class="flower__leaf flower__leaf--8 flower__fall-down--purple"></div>
+						</div>
+					</div>
+					<div class="flower__glass"></div>
 				</div>
-
 			</div>
+			<!-- Animation End -->
 		</div>
 	</section>
 
-</main><!-- End #main -->
-
+</main>
 <!-- ======= Footer ======= -->
 <jsp:include page="include/footer.jsp" />
 <!-- ======= Footer End======= -->
-
 <jsp:include page="include/commondown.jsp" />
 </body>
 </html>

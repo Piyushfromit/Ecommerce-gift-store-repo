@@ -36,7 +36,7 @@ public class SecurityConfig {
 		http
         .authorizeHttpRequests(authorizeRequests ->
             authorizeRequests
-                .requestMatchers("/","/hi","/register","/jsp").permitAll()
+                .requestMatchers("/","/login","/register").permitAll()
                 .requestMatchers("/admin/**").hasRole("ADMIN") // Requires role "ADMIN" for /admin/**
                 .requestMatchers("/user/**").hasRole("USER") // Requires role "USER" for /user/**
                 .anyRequest().permitAll()
@@ -47,7 +47,7 @@ public class SecurityConfig {
         		.successHandler((request, response, authentication) ->{
         	    if (authentication.getAuthorities().stream()
                   .anyMatch(grantedAuthority -> grantedAuthority.getAuthority().equals("ROLE_ADMIN"))) {
-                   response.sendRedirect("/admin/home"); // Redirect to admin dashboard for ROLE_ADMIN
+                   response.sendRedirect("/"); // Redirect to admin dashboard for ROLE_ADMIN
                   } else {
                    response.sendRedirect("/"); // Redirect to user dashboard for ROLE_USER
                   }	

@@ -3,7 +3,7 @@
         <li class="nav-heading">Business</li>
         <!-- Dashboard -->
         <li class="nav-item">
-            <a class="nav-link collapsed" href="#">
+            <a class="nav-link collapsed" href="/">
                 <i class="bi bi-grid"></i>
                 <span>Dashboard</span>
             </a>
@@ -140,7 +140,7 @@
                 </li>
                 <li>
                     <a href="#">
-                        <i class="bi bi-gear"></i><span>Setting</span>
+                        <i class="bi bi-gear"></i><span>Account Setting</span>
                     </a>
                 </li>
                 <li>
@@ -155,6 +155,5 @@
                 </li>
             </ul>
         </li>
-
     </ul>
 </aside>

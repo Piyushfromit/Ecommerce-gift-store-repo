@@ -50,11 +50,6 @@ public class AdminController {
 	@Autowired
 	public ProductRepository productRepository;
 
-	@GetMapping("/home")
-	public String adminDashboard() {
-		return "admin/index";
-	}
-
 	@GetMapping("/viewcategory")
 	public String viewAllCategory(final HttpSession session, final Model model) {
 		List<Category> allCategory = categoryService.getAllCategory();

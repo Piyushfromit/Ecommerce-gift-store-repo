@@ -58,9 +58,6 @@ pageEncoding="UTF-8"%>
                                 </form>
                             </div>
                         </div>
-                        <div class="credits">
-                            Designed by <a href="#">BootstrapMade</a>
-                        </div>
                     </div>
                 </div>
             </div>

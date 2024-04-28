@@ -88,7 +88,6 @@ public class LoginRegisterController {
          
          
          return "redirect:/login";
-        // return "login";   // redirect:/home
     }
 
 
