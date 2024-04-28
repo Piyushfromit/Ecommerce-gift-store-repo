@@ -75,22 +75,22 @@
                 </li>
                 <li>
                     <a href="#">
-                        <i class="bi bi-circle"></i><span>Order Preparing</span>
+                        <i class="bi bi-circle"></i><span>Preparing</span>
                     </a>
                 </li>
                 <li>
                     <a href="#">
-                        <i class="bi bi-circle"></i><span>Order Prepared</span>
+                        <i class="bi bi-circle"></i><span>Prepared</span>
                     </a>
                 </li>
                 <li>
                     <a href="#">
-                        <i class="bi bi-circle"></i><span>Order Dispatched</span>
+                        <i class="bi bi-circle"></i><span>Dispatched</span>
                     </a>
                 </li>
                 <li>
                     <a href="#">
-                        <i class="bi bi-circle"></i><span>Order Delivered</span>
+                        <i class="bi bi-circle"></i><span>Delivered</span>
                     </a>
                 </li>
             </ul>
