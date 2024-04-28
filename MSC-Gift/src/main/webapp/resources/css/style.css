@@ -36,7 +36,7 @@ h6 {
 --------------------------------------------------------------*/
 #main {
   margin-top: 60px;
-  padding: 20px 30px;
+  padding: 10px 15px;
   transition: all 0.3s;
 }
 
@@ -240,7 +240,7 @@ h6 {
 }
 
 .card-body {
-  padding: 0 20px 20px 20px;
+  padding: 0px 15px 15px 15px;
 }
 
 .card-img-overlay {
