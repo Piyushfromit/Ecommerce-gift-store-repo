@@ -25,10 +25,12 @@ pageEncoding="UTF-8"%>
 			<div class="col-lg-12">
 				<div class="card">
 					<div class="card-body">
-						<h5 class="card-title">All Category</h5>
-						<a href="/admin/addcategory" class="btn btn-primary">Add Category</a>
-						<!--<p>All Category displayed hare</p>-->
-						<!-- Table with stripped rows -->
+
+						<div class="d-flex justify-content-between ">
+							<h3 class="card-title " >All Category</h3>
+							<a href="/admin/addcategory" class="btn btn-primary mt-3 mb-3 ">Add Category</a>
+						</div>
+
 						<table class="table datatable">
 							<thead>
 							<tr>
@@ -46,8 +48,8 @@ pageEncoding="UTF-8"%>
 									<td>${category.id}</td>
 									<td>${category.categoryname}</td>
 									<td>${category.isEnabled ? 'Active' : 'Inactive'}</td>
-									<td><a href="/admin/editcategory/${category.id}"><button>Edit</button></a></td>
-									<td><a href="/admin/deletecategory/${category.id}"><button>Del</button></a></td>
+									<td><a href="/admin/editcategory/${category.id}"><button class="btn btn-primary">Edit</button></a></td>
+									<td><a href="/admin/deletecategory/${category.id}"><button class="btn btn-danger">Delete</button></a></td>
 								</tr>
 							</c:forEach>
 							</tbody>
