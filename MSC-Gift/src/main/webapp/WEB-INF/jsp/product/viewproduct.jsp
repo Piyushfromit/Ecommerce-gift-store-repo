@@ -25,8 +25,11 @@ pageEncoding="UTF-8"%>
 			<div class="col-lg-12">
 				<div class="card">
 					<div class="card-body">
-						<h5 class="card-title">All Product</h5>
-						<a href="/admin/addproduct" class="btn btn-primary">Add Product</a>
+						<div class="d-flex justify-content-between ">
+							<h3 class="card-title">All Product</h3>
+							<a href="#" class="btn btn-primary mt-3 mb-3 ">Add Product</a>
+						</div>
+
 							<table class="table datatable">
 								<thead>
 									<tr>
@@ -66,8 +69,8 @@ pageEncoding="UTF-8"%>
 											<td>${product.productWeight}</td>
 											<td>${product.createdDate}</td>
 											<td>${product.updatedDate}</td>
-											<td><a href="/admin/editproduct/${product.id}"><button>Edit</button></a></td>
-											<td><a href="/admin/deleteproduct/${product.id}"><button>Del</button></a></td>
+											<td><a href="/admin/editproduct/${product.id}"><button class="btn btn-primary">Edit</button></a></td>
+											<td><a href="/admin/deleteproduct/${product.id}"><button class="btn btn-danger">Del</button></a></td>
 											<!--  <td>${product.description}</td>
 											   <td>${product.imageTwo}</td>
 											   <td>${product.imageThree}</td>

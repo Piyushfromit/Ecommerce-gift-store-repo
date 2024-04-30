@@ -24,10 +24,10 @@
 			<div class="col-lg-12">
 				<div class="card">
 					<div class="card-body">
-						<h5 class="card-title">All Admin</h5>
-						<a href="#" class="btn btn-primary">Add Admin</a>
-						<!--<p>All Category displayed hare</p>-->
-						<!-- Table with stripped rows -->
+						<div class="d-flex justify-content-between ">
+						<h3 class="card-title">All Admin</h3>
+						<a href="#" class="btn btn-primary mt-3 mb-3 ">Register new Admin</a>
+						</div>
 						<table class="table datatable">
 							<thead>
 							<tr>
