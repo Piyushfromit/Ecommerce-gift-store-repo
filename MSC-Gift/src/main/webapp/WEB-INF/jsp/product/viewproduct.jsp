@@ -69,8 +69,8 @@ pageEncoding="UTF-8"%>
 											<td>${product.productWeight}</td>
 											<td>${product.createdDate}</td>
 											<td>${product.updatedDate}</td>
-											<td><a href="/admin/editproduct/${product.id}"><button class="btn btn-primary">Edit</button></a></td>
-											<td><a href="/admin/deleteproduct/${product.id}"><button class="btn btn-danger">Del</button></a></td>
+											<td><a href="/admin/editproduct/${product.id}"><button class="btn btn-primary bi bi-pen"></button></a></td>
+											<td><a href="/admin/deleteproduct/${product.id}"><button class="btn btn-danger bi bi-trash"></button></a></td>
 											<!--  <td>${product.description}</td>
 											   <td>${product.imageTwo}</td>
 											   <td>${product.imageThree}</td>

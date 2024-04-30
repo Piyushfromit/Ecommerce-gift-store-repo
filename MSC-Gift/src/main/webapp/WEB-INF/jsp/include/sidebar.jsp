@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="jakarta.tags.core"%>
 <aside id="sidebar" class="sidebar">
     <ul class="sidebar-nav" id="sidebar-nav">
         <li class="nav-heading">Business</li>
@@ -95,7 +96,6 @@
                 </li>
             </ul>
         </li>
-
         <li class="nav-heading">Pages</li>
         <!-- About Us, Contact Us, T & C, P % P -->
         <li class="nav-item">
@@ -133,26 +133,37 @@
                 <span>Profile</span><i class="bi bi-chevron-down ms-auto"></i>
             </a>
             <ul id="profile-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-                <li>
-                    <a href="#">
-                        <i class="bi bi-person"></i><span>My Profile</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="bi bi-gear"></i><span>Account Setting</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="bi bi-box-arrow-in-right"></i><span>Log In</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="bi bi-box-arrow-right"></i><span>Log Out</span>
-                    </a>
-                </li>
+                <c:choose>
+                    <c:when test="${not empty user}">
+                        <li>
+                            <a href="/myProfile">
+                                <i class="bi bi-person"></i><span>My Profile</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="bi bi-gear"></i><span>Account Setting</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="logout">
+                                <i class="bi bi-box-arrow-right"></i><span>Log Out</span>
+                            </a>
+                        </li>
+                    </c:when>
+                    <c:otherwise>
+                        <li>
+                            <a href="/login">
+                                <i class="bi bi-box-arrow-in-right"></i><span>Log In</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/register">
+                                <i class="bi bi-box-arrow-right"></i><span>Register</span>
+                            </a>
+                        </li>
+                    </c:otherwise>
+                </c:choose>
             </ul>
         </li>
     </ul>

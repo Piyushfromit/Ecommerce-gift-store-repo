@@ -31,16 +31,17 @@ public class LoginRegisterController {
 
 
 	@GetMapping("/")
-	public String homePage(final Model model) {
+	public String homePage( HttpSession httpSession) {
 
 		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 		if (!authentication.getName().equalsIgnoreCase("anonymousUser")
 				&& authentication.getAuthorities().stream().anyMatch(a -> a.getAuthority().equals("ROLE_ADMIN"))) {
 			Users users = this.userRepository.findByEmail(authentication.getName()).get();
-			model.addAttribute("user", users);
+			httpSession.setAttribute("user", users);
 		}
 		System.out.println("Home page");
 		return "index";
+
 	}
 
 
@@ -98,7 +99,14 @@ public class LoginRegisterController {
 		return "register";
     }
 
-	
-	
+	@GetMapping("/myProfile")
+	public String myProfile() {
+
+		return "myprofile";
+	}
+
+
+
+
 	
 }

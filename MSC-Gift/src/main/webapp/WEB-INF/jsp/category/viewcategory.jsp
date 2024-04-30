@@ -48,8 +48,8 @@ pageEncoding="UTF-8"%>
 									<td>${category.id}</td>
 									<td>${category.categoryname}</td>
 									<td>${category.isEnabled ? 'Active' : 'Inactive'}</td>
-									<td><a href="/admin/editcategory/${category.id}"><button class="btn btn-primary">Edit</button></a></td>
-									<td><a href="/admin/deletecategory/${category.id}"><button class="btn btn-danger">Delete</button></a></td>
+									<td><a href="/admin/editcategory/${category.id}"><button class="btn btn-primary bi bi-pen"></button></a></td>
+									<td><a href="/admin/deletecategory/${category.id}"><button class="btn btn-danger bi bi-trash"></button></a></td>
 								</tr>
 							</c:forEach>
 							</tbody>
